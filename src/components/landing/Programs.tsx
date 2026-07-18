@@ -49,7 +49,7 @@ const Programs = () => {
             Запись на программу
           </span>
           <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold leading-tight">
-            Возможности записи на <span className="text-gradient italic">«Точку Старта»</span>
+            Программа <span className="text-gradient italic">«ТОЧКА СТАРТА!»</span>
           </h2>
           <p className="mt-5 text-lg text-muted-foreground">
             Выберите подходящий формат участия — программа одна, а условия участия разные.
