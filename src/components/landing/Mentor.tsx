@@ -1,7 +1,7 @@
 import Icon from '@/components/ui/icon';
 
 const MENTOR_IMG =
-  'https://cdn.poehali.dev/projects/35e9750e-aa05-49ef-b129-884fed200ea0/files/d899fb33-a0e2-4b83-b5cb-101f56830018.jpg';
+  'https://cdn.poehali.dev/projects/35e9750e-aa05-49ef-b129-884fed200ea0/files/6ba52faf-5a2f-4cdd-9d59-f577d0307580.jpg';
 
 const credentials = [
   { icon: 'GraduationCap', text: 'Психолог, специалист по самоопределению' },
