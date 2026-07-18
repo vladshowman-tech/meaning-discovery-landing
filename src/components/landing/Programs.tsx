@@ -1,91 +1,63 @@
-import { useState } from 'react';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
 
-type Program = {
+type Option = {
   tag: string;
   title: string;
   desc: string;
-  duration: string;
-  format: string;
+  audience: string;
   price: string;
   featured?: boolean;
   points: string[];
 };
 
-const categories = ['Все', 'Ценности', 'Эмоции', 'Предназначение'] as const;
-
-const programs: (Program & { cat: (typeof categories)[number] })[] = [
+const options: Option[] = [
   {
-    cat: 'Ценности',
-    tag: 'Старт',
-    title: 'Кто я на самом деле',
-    desc: 'Базовый курс самоидентификации: снимаем чужие ожидания и находим свои настоящие ценности.',
-    duration: '4 недели',
-    format: 'Видео + практика',
-    price: '9 900 ₽',
-    points: ['21 урок с заданиями', 'Карта личных ценностей', 'Разбор в мини-группе'],
+    tag: 'Стандарт',
+    title: 'Индивидуальное участие',
+    desc: 'Полное прохождение программы «Точка Старта» для всех, кто идёт своим путём.',
+    audience: 'Для всех',
+    price: '25 000 ₽',
+    points: ['Все модули программы', 'Практики и задания', 'Разбор в мини-группе', 'Доступ к материалам'],
   },
   {
-    cat: 'Предназначение',
-    tag: 'Хит',
-    title: 'В точке предназначения',
-    desc: 'Глубокая программа для тех, кто достиг внешнего успеха и ищет внутренний смысл и дело жизни.',
-    duration: '8 недель',
-    format: 'Группа + наставник',
-    price: '24 900 ₽',
+    tag: 'Льготный',
+    title: 'Для социальных групп',
+    desc: 'Специальная цена для студентов, пенсионеров, многодетных и других социальных категорий.',
+    audience: 'По подтверждению статуса',
+    price: '15 500 ₽',
+    points: ['Все модули программы', 'Практики и задания', 'Разбор в мини-группе', 'Скидка по документу'],
+  },
+  {
+    tag: 'Вместе',
+    title: 'Для супругов',
+    desc: 'Особый формат для пар, которые проходят программу вдвоём и растут вместе.',
+    audience: 'Двое участников',
+    price: '35 000 ₽',
     featured: true,
-    points: ['Личный наставник', 'Еженедельные созвоны', 'Индивидуальная стратегия', 'Доступ навсегда'],
-  },
-  {
-    cat: 'Эмоции',
-    tag: 'Практика',
-    title: 'Понять свои эмоции',
-    desc: 'Учимся распознавать чувства, управлять состоянием и уверенно отстаивать личные границы.',
-    duration: '6 недель',
-    format: 'Воркшопы',
-    price: '14 900 ₽',
-    points: ['Дневник эмоций', 'Техники саморегуляции', 'Практика границ'],
+    points: ['Участие для двоих', 'Парные практики', 'Совместный разбор', 'Личное сопровождение пары'],
   },
 ];
 
 const Programs = () => {
-  const [active, setActive] = useState<(typeof categories)[number]>('Все');
-  const list = active === 'Все' ? programs : programs.filter((p) => p.cat === active);
-
   return (
     <section id="programs" className="relative py-24 md:py-32">
       <div className="absolute inset-x-0 top-1/3 h-96 aurora opacity-40 blur-2xl pointer-events-none" />
       <div className="container relative">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-          <div className="max-w-xl">
-            <span className="font-body text-sm uppercase tracking-[0.2em] text-primary">
-              Обучающие программы
-            </span>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold leading-tight">
-              Курсы для работы <span className="text-gradient italic">над собой</span>
-            </h2>
-          </div>
-
-          <div className="flex flex-wrap gap-2">
-            {categories.map((c) => (
-              <button
-                key={c}
-                onClick={() => setActive(c)}
-                className={`rounded-full px-5 py-2 text-sm transition-all ${
-                  active === c
-                    ? 'bg-primary text-primary-foreground'
-                    : 'glass text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                {c}
-              </button>
-            ))}
-          </div>
+        <div className="max-w-2xl">
+          <span className="font-body text-sm uppercase tracking-[0.2em] text-primary">
+            Запись на программу
+          </span>
+          <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold leading-tight">
+            Возможности записи на <span className="text-gradient italic">«Точку Старта»</span>
+          </h2>
+          <p className="mt-5 text-lg text-muted-foreground">
+            Выберите подходящий формат участия — программа одна, а условия участия разные.
+          </p>
         </div>
 
         <div className="mt-14 grid lg:grid-cols-3 gap-6">
-          {list.map((p) => (
+          {options.map((p) => (
             <div
               key={p.title}
               className={`relative flex flex-col rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 ${
@@ -108,13 +80,8 @@ const Programs = () => {
               <h3 className="mt-6 font-display text-3xl font-semibold leading-tight">{p.title}</h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
 
-              <div className="mt-5 flex gap-4 text-sm text-muted-foreground">
-                <span className="flex items-center gap-1.5">
-                  <Icon name="Clock" size={15} /> {p.duration}
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <Icon name="Play" size={15} /> {p.format}
-                </span>
+              <div className="mt-5 flex items-center gap-1.5 text-sm text-muted-foreground">
+                <Icon name="Users" size={15} /> {p.audience}
               </div>
 
               <ul className="mt-6 space-y-2.5 flex-1">
