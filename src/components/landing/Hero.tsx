@@ -15,8 +15,17 @@ const Hero = () => {
 
       <div className="container relative grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
         <div>
+          <div
+            className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-sm animate-fade-up"
+          >
+            <Icon name="CalendarDays" size={15} className="text-primary" />
+            <span>
+              Старт программы: <span className="text-primary font-medium">7–9 августа 2026</span>
+            </span>
+          </div>
+
           <h1
-            className="font-display text-5xl sm:text-6xl md:text-7xl font-semibold leading-[0.98] animate-fade-up"
+            className="mt-6 font-display text-5xl sm:text-6xl md:text-7xl font-semibold leading-[0.98] animate-fade-up"
             style={{ animationDelay: '0.08s' }}
           >
             Найдите ответ
