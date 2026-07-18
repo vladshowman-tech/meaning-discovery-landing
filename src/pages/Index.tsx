@@ -1,6 +1,7 @@
 import Header from '@/components/landing/Header';
 import Hero from '@/components/landing/Hero';
 import Path from '@/components/landing/Path';
+import Mentor from '@/components/landing/Mentor';
 import Programs from '@/components/landing/Programs';
 import How from '@/components/landing/How';
 import Faq from '@/components/landing/Faq';
@@ -14,6 +15,7 @@ const Index = () => {
       <main>
         <Hero />
         <Path />
+        <Mentor />
         <Programs />
         <How />
         <Faq />
