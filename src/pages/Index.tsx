@@ -3,6 +3,7 @@ import Hero from '@/components/landing/Hero';
 import Path from '@/components/landing/Path';
 import Mentor from '@/components/landing/Mentor';
 import Programs from '@/components/landing/Programs';
+import Marquee from '@/components/landing/Marquee';
 import How from '@/components/landing/How';
 import Faq from '@/components/landing/Faq';
 import Cta from '@/components/landing/Cta';
@@ -17,6 +18,7 @@ const Index = () => {
         <Path />
         <Mentor />
         <Programs />
+        <Marquee />
         <How />
         <Faq />
         <Cta />
