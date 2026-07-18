@@ -20,7 +20,7 @@ const Mentor = () => {
           <div className="relative rounded-[2rem] overflow-hidden border border-border glow">
             <img
               src={MENTOR_IMG}
-              alt="Елена Ширыколова — тренер программы «Точка Старта»"
+              alt="Елена Ширыкалова — тренер программы «Точка Старта»"
               className="w-full h-[480px] object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
@@ -41,7 +41,7 @@ const Mentor = () => {
             Тренер программы
           </span>
           <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold leading-tight">
-            Елена <span className="text-gradient italic">Ширыколова</span>
+            Елена <span className="text-gradient italic">Ширыкалова</span>
           </h2>
           <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
             Больше десяти лет сопровождаю людей на пути к себе — помогаю разглядеть настоящие
