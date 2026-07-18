@@ -20,7 +20,7 @@ const Hero = () => {
           >
             <Icon name="CalendarDays" size={15} className="text-primary" />
             <span>
-              Старт программы: <span className="text-primary font-medium">7–9 августа 2026</span>
+              Время проведения программы: <span className="text-primary font-medium">7–9 августа 2026</span>
             </span>
           </div>
 
