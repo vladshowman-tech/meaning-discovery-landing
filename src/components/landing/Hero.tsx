@@ -19,9 +19,7 @@ const Hero = () => {
             className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-sm animate-fade-up"
           >
             <Icon name="CalendarDays" size={15} className="text-primary" />
-            <span>
-              Время проведения программы: <span className="text-primary font-medium">7–9 августа 2026</span>
-            </span>
+            <span className="text-primary font-medium">7–9 августа 2026</span>
           </div>
 
           <h1
