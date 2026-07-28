@@ -33,7 +33,7 @@ const Payment = () => {
 
       <header className="relative container flex items-center justify-between py-6">
         <button
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/1')}
           className="flex items-center gap-2.5"
         >
           <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground">
@@ -43,7 +43,7 @@ const Payment = () => {
             Точка<span className="text-gradient"> Старта</span>
           </span>
         </button>
-        <Button variant="ghost" onClick={() => navigate('/')} className="rounded-full">
+        <Button variant="ghost" onClick={() => navigate('/1')} className="rounded-full">
           <Icon name="ArrowLeft" size={16} className="mr-2" /> На главную
         </Button>
       </header>
