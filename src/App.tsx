@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Index from "./pages/Index";
 import Relationships from "./pages/Relationships";
 import Career from "./pages/Career";
+import Breakthrough from "./pages/Breakthrough";
 import Payment from "./pages/Payment";
 import NotFound from "./pages/NotFound";
 
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/1" element={<Index />} />
           <Route path="/2" element={<Relationships />} />
           <Route path="/3" element={<Career />} />
+          <Route path="/4" element={<Breakthrough />} />
           <Route path="/oplata/:slug" element={<Payment />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
