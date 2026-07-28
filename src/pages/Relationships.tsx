@@ -15,6 +15,34 @@ const requests = [
   { icon: 'Sunrise', text: 'Как изменить привычки и повысить качество повседневности?' },
 ];
 
+const audience = [
+  {
+    icon: 'HeartHandshake',
+    title: 'Пары',
+    text: 'Желающие наладить отношения, вернуть тепло и понимание друг друга.',
+  },
+  {
+    icon: 'Baby',
+    title: 'Родители',
+    text: 'Ищущие контакт и доверие в общении с детьми любого возраста.',
+  },
+  {
+    icon: 'UserSearch',
+    title: 'Одинокие люди',
+    text: 'В поиске отношений, готовые разобраться в себе перед новым шагом.',
+  },
+  {
+    icon: 'Scale',
+    title: 'Ищущие баланс',
+    text: 'Между работой и личной жизнью, уставшие от постоянного перекоса.',
+  },
+  {
+    icon: 'RefreshCcw',
+    title: 'Желающие меняться',
+    text: 'Готовые изменить привычки и повысить качество повседневной жизни.',
+  },
+];
+
 const credentials = [
   { icon: 'GraduationCap', text: 'Психолог, специалист по самоопределению' },
   { icon: 'Users2', text: '4 200+ участников программ' },
@@ -140,6 +168,36 @@ const Relationships = () => {
                   <Icon name={r.icon} size={20} />
                 </span>
                 <p className="text-sm leading-relaxed pt-2">«{r.text}»</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative py-20 md:py-28" style={{ background: 'var(--h-bg-soft)' }}>
+        <div className="h-container">
+          <div className="max-w-xl">
+            <span className="h-eyebrow">
+              <Icon name="Users" size={15} /> Для кого программа
+            </span>
+            <h2 className="mt-4 text-3xl md:text-4xl font-semibold leading-tight">
+              Кому подойдёт «Точка Старта!»
+            </h2>
+          </div>
+
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {audience.map((a) => (
+              <div key={a.title} className="h-card p-7">
+                <span
+                  className="flex h-12 w-12 items-center justify-center rounded-2xl"
+                  style={{ background: 'var(--h-bg-soft)', color: 'var(--h-accent)' }}
+                >
+                  <Icon name={a.icon} size={22} />
+                </span>
+                <h3 className="mt-5 h-serif text-xl font-semibold">{a.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed" style={{ color: 'var(--h-ink-soft)' }}>
+                  {a.text}
+                </p>
               </div>
             ))}
           </div>
