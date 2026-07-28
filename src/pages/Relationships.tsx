@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 import MENTOR_IMG from '@/assets/mentor.jpg';
+import { plans } from '@/data/plans';
 import './Relationships.css';
 
 const HERO_IMG =
@@ -12,6 +13,13 @@ const requests = [
   { icon: 'Users', text: 'Как избавиться от одиночества?' },
   { icon: 'Scale', text: 'Как создать баланс между работой и личной жизнью?' },
   { icon: 'Sunrise', text: 'Как изменить привычки и повысить качество повседневности?' },
+];
+
+const credentials = [
+  { icon: 'GraduationCap', text: 'Психолог, специалист по самоопределению' },
+  { icon: 'Users2', text: '4 200+ участников программ' },
+  { icon: 'BadgeCheck', text: 'Сертифицированный коуч ICF' },
+  { icon: 'Sparkles', text: 'Тренер программы «Точка Старта»' },
 ];
 
 const Relationships = () => {
@@ -152,23 +160,117 @@ const Relationships = () => {
 
           <div>
             <span className="h-eyebrow">
-              <Icon name="Sparkles" size={15} /> Программа
+              <Icon name="Sparkles" size={15} /> Тренер программы
             </span>
             <h2 className="mt-4 text-3xl md:text-4xl font-semibold leading-tight">
-              «Точка <span style={{ color: 'var(--h-accent)' }}>Старта!</span>»
+              Елена <span style={{ color: 'var(--h-accent)' }}>Ширыкалова</span>
             </h2>
+            <p className="mt-5 text-lg" style={{ color: 'var(--h-ink-soft)' }}>
+              Больше десяти лет сопровождаю людей на пути к себе — помогаю разглядеть настоящие
+              ценности за слоем чужих ожиданий и вернуть ощущение осмысленной жизни. «Точка
+              Старта» — программа, в которую вложен весь мой опыт работы с теми, кто устал жить на
+              автопилоте.
+            </p>
 
-            <div className="mt-7 flex items-center gap-3 h-card px-5 py-4 max-w-md">
+            <div className="mt-7 grid sm:grid-cols-2 gap-3">
+              {credentials.map((c) => (
+                <div key={c.text} className="flex items-center gap-3 h-card px-5 py-4">
+                  <span
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl"
+                    style={{ background: 'var(--h-bg-soft)', color: 'var(--h-accent)' }}
+                  >
+                    <Icon name={c.icon} size={18} />
+                  </span>
+                  <span className="text-sm">{c.text}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-4 flex items-center gap-3 h-card px-5 py-4 max-w-md">
               <Icon name="Clock" size={18} style={{ color: 'var(--h-accent)' }} className="shrink-0" />
               <span className="text-sm">
                 Длительность — 3 дня: 7 августа (вечер), 8 и 9 августа (весь день) 2026 года
               </span>
             </div>
+          </div>
+        </div>
+      </section>
 
-            <div className="mt-4 flex items-center gap-3 h-card px-5 py-4 max-w-md">
-              <Icon name="GraduationCap" size={18} style={{ color: 'var(--h-accent)' }} className="shrink-0" />
-              <span className="text-sm">Тренер программы — Елена Ширыкалова</span>
-            </div>
+      <section id="h-plans" className="relative py-20 md:py-28">
+        <div className="h-container">
+          <div className="max-w-xl">
+            <span className="h-eyebrow">
+              <Icon name="Wallet" size={15} /> Стоимость участия
+            </span>
+            <h2 className="mt-4 text-3xl md:text-4xl font-semibold leading-tight">
+              Выберите формат участия
+            </h2>
+            <p className="mt-4 text-lg" style={{ color: 'var(--h-ink-soft)' }}>
+              Программа одна, а условия участия разные.
+            </p>
+          </div>
+
+          <div className="mt-12 grid lg:grid-cols-3 gap-6">
+            {plans.map((p) => (
+              <div
+                key={p.slug}
+                className="h-card p-8 flex flex-col"
+                style={
+                  p.featured
+                    ? { border: '1.5px solid var(--h-accent)', background: 'var(--h-bg-soft)' }
+                    : undefined
+                }
+              >
+                <div className="flex items-center justify-between">
+                  <span
+                    className="rounded-full px-3 py-1 text-xs font-medium"
+                    style={
+                      p.featured
+                        ? { background: 'var(--h-accent)', color: '#fff8f2' }
+                        : { background: 'var(--h-bg-soft)', color: 'var(--h-accent)' }
+                    }
+                  >
+                    {p.tag}
+                  </span>
+                  <span className="text-2xl font-semibold" style={{ color: 'var(--h-accent)' }}>
+                    {p.price}
+                  </span>
+                </div>
+
+                <h3 className="mt-6 text-2xl font-semibold leading-tight">{p.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed" style={{ color: 'var(--h-ink-soft)' }}>
+                  {p.desc}
+                </p>
+
+                <div
+                  className="mt-5 flex items-center gap-1.5 text-sm"
+                  style={{ color: 'var(--h-ink-soft)' }}
+                >
+                  <Icon name="Users" size={15} /> {p.audience}
+                </div>
+
+                <ul className="mt-6 space-y-2.5 flex-1">
+                  {p.points.map((pt) => (
+                    <li key={pt} className="flex items-start gap-2.5 text-sm">
+                      <Icon
+                        name="Check"
+                        size={16}
+                        className="mt-0.5 shrink-0"
+                        style={{ color: 'var(--h-accent)' }}
+                      />
+                      <span>{pt}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <button
+                  onClick={() => navigate(`/oplata/${p.slug}`)}
+                  className={p.featured ? 'h-btn mt-7' : 'h-btn-outline mt-7'}
+                >
+                  Записаться
+                </button>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -238,17 +340,66 @@ const Relationships = () => {
         </div>
       </section>
 
-      <footer className="relative py-12" style={{ borderTop: '1px solid var(--h-border)' }}>
-        <div className="h-container flex flex-col sm:flex-row items-center justify-between gap-3 text-sm" style={{ color: 'var(--h-ink-soft)' }}>
-          <span>© 2026 Гармония. Все права защищены.</span>
-          <div className="flex items-center gap-5">
-            <span className="flex items-center gap-2">
-              <Icon name="Mail" size={15} /> activationmission@yandex.ru
-            </span>
-            <span className="flex items-center gap-2">
-              <Icon name="Phone" size={15} /> +7 964 488-73-65
-            </span>
+      <footer className="relative py-14" style={{ borderTop: '1px solid var(--h-border)' }}>
+        <div className="h-container grid md:grid-cols-[1.5fr_1fr_1fr] gap-10">
+          <div>
+            <div className="flex items-center gap-2.5">
+              <span
+                className="flex h-9 w-9 items-center justify-center rounded-full"
+                style={{ background: 'var(--h-accent)', color: '#fff8f2' }}
+              >
+                <Icon name="Flower2" size={18} />
+              </span>
+              <span className="text-2xl font-semibold">Гармония</span>
+            </div>
+            <p className="mt-4 max-w-sm text-sm leading-relaxed" style={{ color: 'var(--h-ink-soft)' }}>
+              Программа «Точка Старта» для построения гармоничной жизни во всех её сферах —
+              отношения, семья, работа и личные привычки.
+            </p>
           </div>
+
+          <div>
+            <h4 className="font-semibold mb-4">Разделы</h4>
+            <ul className="space-y-2.5 text-sm" style={{ color: 'var(--h-ink-soft)' }}>
+              {[
+                { l: 'О программе', h: '#h-program' },
+                { l: 'Стоимость', h: '#h-plans' },
+                { l: 'Заявка', h: '#h-form' },
+              ].map((i) => (
+                <li key={i.h}>
+                  <button
+                    onClick={() => document.querySelector(i.h)?.scrollIntoView({ behavior: 'smooth' })}
+                    className="hover:opacity-70 transition-opacity"
+                  >
+                    {i.l}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-4">Контакты</h4>
+            <ul className="space-y-2.5 text-sm" style={{ color: 'var(--h-ink-soft)' }}>
+              <li className="flex items-center gap-2">
+                <Icon name="Mail" size={15} /> activationmission@yandex.ru
+              </li>
+              <li className="flex items-center gap-2">
+                <Icon name="Send" size={15} /> @missiontrue
+              </li>
+              <li className="flex items-center gap-2">
+                <Icon name="Phone" size={15} /> +7 964 488-73-65
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          className="h-container mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm"
+          style={{ borderTop: '1px solid var(--h-border)', color: 'var(--h-ink-soft)' }}
+        >
+          <span>© 2026 Гармония. Все права защищены.</span>
+          <span>Сделано с заботой о тех, кто ищет гармонию</span>
         </div>
       </footer>
     </div>
