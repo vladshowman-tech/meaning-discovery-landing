@@ -57,17 +57,15 @@ const Cta = () => {
                   placeholder="Ваше имя"
                   className="h-13 rounded-full bg-card/60 border-border px-6 h-14"
                 />
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Input
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="E-mail"
-                    className="h-14 rounded-full bg-card/60 border-border px-6 flex-1"
-                  />
-                  <Button type="submit" size="lg" className="h-14 rounded-full px-8 glow font-medium">
-                    Записаться на консультацию по целям
-                  </Button>
-                </div>
+                <Input
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="E-mail"
+                  className="h-14 rounded-full bg-card/60 border-border px-6"
+                />
+                <Button type="submit" size="lg" className="h-14 rounded-full px-8 glow font-medium w-full">
+                  Записаться на консультацию по целям
+                </Button>
                 {error && <p className="text-sm text-destructive">{error}</p>}
                 <p className="text-xs text-muted-foreground mt-1">
                   Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
