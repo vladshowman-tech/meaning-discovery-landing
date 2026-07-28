@@ -5,7 +5,7 @@ const credentials = [
   { icon: 'GraduationCap', text: 'Психолог, специалист по самоопределению' },
   { icon: 'Users2', text: '4 200+ участников программ' },
   { icon: 'BadgeCheck', text: 'Сертифицированный коуч ICF' },
-  { icon: 'Sparkles', text: 'Автор программы «Точка Старта»' },
+  { icon: 'Sparkles', text: 'Тренер программы «Точка Старта»' },
 ];
 
 const Mentor = () => {
