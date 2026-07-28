@@ -24,6 +24,24 @@ const credentials = [
   { icon: 'Sparkles', text: 'Тренер программы «Точка Старта»' },
 ];
 
+const programPoints = [
+  {
+    icon: 'Hammer',
+    title: 'Практика, а не теория',
+    text: 'Каждый блок закрепляется упражнением — вы пробуете, а не просто слушаете.',
+  },
+  {
+    icon: 'HeartHandshake',
+    title: 'Поддержка тренера',
+    text: 'Елена сопровождает лично на каждом этапе и даёт обратную связь по вашему запросу.',
+  },
+  {
+    icon: 'ListChecks',
+    title: 'Понятный план действий',
+    text: 'На выходе — не абстрактная мотивация, а конкретные шаги на ближайшее время.',
+  },
+];
+
 const Breakthrough = () => {
   const navigate = useNavigate();
   const [name, setName] = useState('');
@@ -170,7 +188,52 @@ const Breakthrough = () => {
         </div>
       </section>
 
-      <section id="b-program" className="relative py-20 md:py-28" style={{ background: 'var(--b-bg-soft)' }}>
+      <section id="b-program" className="relative py-20 md:py-28">
+        <div className="b-container">
+          <div className="max-w-2xl">
+            <span className="b-tag">
+              <Icon name="Info" size={14} /> О программе
+            </span>
+            <h2 className="mt-4 text-4xl md:text-5xl font-normal leading-tight">
+              Что такое <span className="b-fire-text">«Точка Старта»</span>
+            </h2>
+            <p className="mt-5 text-lg" style={{ color: 'var(--b-ink-soft)' }}>
+              Это трёхдневный очный старт с тренером Еленой Ширыкаловой: 7 августа (вечер),
+              8 и 9 августа 2026 года — весь день. Формат построен так, чтобы за три дня пройти
+              путь от точки старта к первому конкретному результату, а не просто получить
+              мотивацию на один вечер.
+            </p>
+          </div>
+
+          <div className="mt-8 b-card p-8 md:p-10 max-w-3xl" style={{ border: '1px solid var(--b-fire)' }}>
+            <div className="flex items-center gap-3">
+              <Icon name="Clock" size={18} style={{ color: 'var(--b-fire-soft)' }} className="shrink-0" />
+              <span className="text-sm font-medium">
+                7 августа (вечер) — знакомство и запуск. 8–9 августа (весь день) — практика и результат.
+              </span>
+            </div>
+          </div>
+
+          <div className="mt-12 grid sm:grid-cols-3 gap-5">
+            {programPoints.map((p) => (
+              <div key={p.title} className="b-card p-7">
+                <span
+                  className="flex h-12 w-12 items-center justify-center rounded"
+                  style={{ background: 'var(--b-bg)', color: 'var(--b-fire-soft)' }}
+                >
+                  <Icon name={p.icon} size={22} />
+                </span>
+                <h3 className="mt-5 text-xl font-normal">{p.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed" style={{ color: 'var(--b-ink-soft)' }}>
+                  {p.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="b-mentor" className="relative py-20 md:py-28" style={{ background: 'var(--b-bg-soft)' }}>
         <div className="b-container grid lg:grid-cols-[0.85fr_1.15fr] gap-12 items-center">
           <div className="relative">
             <div className="relative rounded overflow-hidden" style={{ border: '1px solid var(--b-border)' }}>
