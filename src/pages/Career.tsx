@@ -5,9 +5,6 @@ import MENTOR_IMG from '@/assets/mentor.jpg';
 import { plans } from '@/data/plans';
 import './Career.css';
 
-const HERO_IMG =
-  'https://cdn.poehali.dev/projects/35e9750e-aa05-49ef-b129-884fed200ea0/files/d53b6535-b217-42ed-b6b5-4b58c87dbcb7.jpg';
-
 const requests = [
   { icon: 'TrendingUp', text: 'Как увеличить доход?' },
   { icon: 'ArrowUpRight', text: 'Как получить повышение?' },
@@ -40,12 +37,31 @@ const credentials = [
   { icon: 'Sparkles', text: 'Тренер программы «Точка Старта»' },
 ];
 
+const navLinks = [
+  { l: 'О программе', h: '#c-program' },
+  { l: 'Маршрут', h: '#c-route' },
+  { l: 'Стоимость', h: '#c-plans' },
+  { l: 'Заявка', h: '#c-form' },
+];
+
+const routeDays = [
+  { day: '07', label: 'Вечер знакомства', desc: 'Погружение в программу, знакомство с группой и запуск личного вектора.' },
+  { day: '08', label: 'День практики', desc: 'Разбор запросов, работа с лидерскими качествами и харизмой.' },
+  { day: '09', label: 'День результата', desc: 'Закрепление навыков, план действий и конкретные шаги к цели.' },
+];
+
 const Career = () => {
   const navigate = useNavigate();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [sent, setSent] = useState(false);
   const [error, setError] = useState('');
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const scrollTo = (h: string) => {
+    setMenuOpen(false);
+    document.querySelector(h)?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -57,33 +73,91 @@ const Career = () => {
 
   return (
     <div className="career-page">
-      <header className="relative c-container flex items-center justify-between py-7">
-        <div className="flex items-center gap-2.5">
-          <span
-            className="flex h-10 w-10 items-center justify-center rounded-xl"
-            style={{ background: 'var(--c-lime)', color: '#0e0f11' }}
+      <nav className="c-nav">
+        <div className="c-container flex items-center justify-between py-4">
+          <div className="flex items-center gap-2.5">
+            <span
+              className="flex h-9 w-9 items-center justify-center rounded-lg"
+              style={{ background: 'var(--c-cyan)', color: '#06090b' }}
+            >
+              <Icon name="Zap" size={17} />
+            </span>
+            <span className="c-display text-lg font-bold tracking-tight">Точка Старта</span>
+          </div>
+
+          <div className="hidden md:flex items-center gap-8">
+            {navLinks.map((i) => (
+              <button key={i.h} onClick={() => scrollTo(i.h)} className="c-nav-link">
+                {i.l}
+              </button>
+            ))}
+          </div>
+
+          <div className="hidden md:flex items-center gap-3">
+            <button onClick={() => navigate('/')} className="c-btn-outline text-sm py-2.5 px-4">
+              <Icon name="ArrowLeft" size={14} /> На главную
+            </button>
+            <button onClick={() => scrollTo('#c-form')} className="c-btn text-sm py-2.5 px-5">
+              Оставить заявку
+            </button>
+          </div>
+
+          <button
+            onClick={() => setMenuOpen(true)}
+            className="md:hidden flex h-10 w-10 items-center justify-center rounded-lg"
+            style={{ border: '1px solid var(--c-border)' }}
           >
-            <Icon name="Zap" size={19} />
-          </span>
-          <span className="c-display text-xl font-bold tracking-tight">Рост</span>
+            <Icon name="Menu" size={20} />
+          </button>
         </div>
-        <button onClick={() => navigate('/')} className="c-btn-outline text-sm">
-          <Icon name="ArrowLeft" size={15} /> На главную
-        </button>
-      </header>
+      </nav>
 
-      <section className="relative overflow-hidden pt-6 pb-20 md:pt-10 md:pb-28 c-grid-line">
-        <div className="c-glow w-96 h-96 -top-20 -left-20" style={{ background: 'var(--c-lime)' }} />
-        <div className="c-glow w-96 h-96 top-10 -right-24" style={{ background: 'var(--c-blue)' }} />
+      {menuOpen && (
+        <div className="c-mobile-menu">
+          <div className="flex items-center justify-between">
+            <span className="c-display text-lg font-bold">Меню</span>
+            <button
+              onClick={() => setMenuOpen(false)}
+              className="flex h-10 w-10 items-center justify-center rounded-lg"
+              style={{ border: '1px solid var(--c-border)' }}
+            >
+              <Icon name="X" size={20} />
+            </button>
+          </div>
+          <div className="mt-10 flex flex-col gap-6">
+            {navLinks.map((i) => (
+              <button
+                key={i.h}
+                onClick={() => scrollTo(i.h)}
+                className="text-2xl font-semibold text-left"
+              >
+                {i.l}
+              </button>
+            ))}
+          </div>
+          <div className="mt-auto flex flex-col gap-3">
+            <button onClick={() => navigate('/')} className="c-btn-outline">
+              <Icon name="ArrowLeft" size={15} /> На главную
+            </button>
+            <button onClick={() => scrollTo('#c-form')} className="c-btn">
+              Оставить заявку
+            </button>
+          </div>
+        </div>
+      )}
 
-        <div className="c-container relative grid lg:grid-cols-[1.05fr_0.95fr] gap-14 items-center">
-          <div>
+      <section className="relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-28 c-grid-line">
+        <div className="c-glow w-96 h-96 -top-20 -left-20" style={{ background: 'var(--c-cyan)' }} />
+        <div className="c-glow w-80 h-80 top-10 -right-24" style={{ background: 'var(--c-cyan-dim)' }} />
+
+        <div className="c-container relative">
+          <div className="max-w-3xl">
             <span className="c-tag c-fade-up">
-              <Icon name="CalendarDays" size={14} /> 7–9 августа 2026
+              <Icon name="Terminal" size={13} /> ТОЧКА_СТАРТА // 07–09.08.2026
             </span>
 
             <h1
-              className="mt-6 text-4xl sm:text-5xl md:text-[3.4rem] font-bold leading-[1.05] c-fade-up"
+              className="mt-6 text-4xl sm:text-5xl md:text-[3.6rem] font-bold leading-[1.05] c-fade-up"
               style={{ animationDelay: '0.08s' }}
             >
               Достижение конкретных целей
@@ -92,7 +166,7 @@ const Career = () => {
             </h1>
 
             <p
-              className="mt-6 max-w-lg text-lg c-fade-up"
+              className="mt-6 max-w-xl text-lg c-fade-up"
               style={{ color: 'var(--c-ink-soft)', animationDelay: '0.16s' }}
             >
               Многие участники рассматривают личностный рост как инструмент для решения
@@ -103,35 +177,50 @@ const Career = () => {
               className="mt-9 flex flex-wrap gap-3 c-fade-up"
               style={{ animationDelay: '0.24s' }}
             >
-              <button
-                onClick={() => document.querySelector('#c-form')?.scrollIntoView({ behavior: 'smooth' })}
-                className="c-btn text-base"
-              >
+              <button onClick={() => scrollTo('#c-form')} className="c-btn text-base">
                 Оставить заявку <Icon name="ArrowRight" size={17} />
               </button>
-              <button
-                onClick={() => document.querySelector('#c-program')?.scrollIntoView({ behavior: 'smooth' })}
-                className="c-btn-outline text-base"
-              >
+              <button onClick={() => scrollTo('#c-program')} className="c-btn-outline text-base">
                 <Icon name="Info" size={16} /> О программе
               </button>
             </div>
           </div>
 
-          <div className="relative c-fade-up" style={{ animationDelay: '0.2s' }}>
-            <div className="relative rounded-2xl overflow-hidden" style={{ border: '1px solid var(--c-border)' }}>
-              <img src={HERO_IMG} alt="Карьерный рост" className="w-full h-[420px] object-cover" />
-            </div>
-            <div
-              className="absolute -left-6 -bottom-6 c-card px-5 py-4 max-w-[220px]"
-            >
-              <div className="flex items-center gap-2" style={{ color: 'var(--c-lime)' }}>
-                <Icon name="TrendingUp" size={18} />
-                <span className="c-display text-lg font-bold">+40% дохода</span>
+          <div id="c-route" className="mt-20 pt-4">
+            <span className="c-tag">
+              <Icon name="Route" size={13} /> Маршрут интенсива
+            </span>
+
+            <div className="mt-10 relative">
+              <svg
+                className="hidden md:block absolute left-0 right-0 top-8 w-full"
+                height="16"
+                preserveAspectRatio="none"
+                viewBox="0 0 100 1"
+              >
+                <line x1="8" y1="0.5" x2="92" y2="0.5" className="c-route-line" />
+              </svg>
+
+              <div className="grid md:grid-cols-3 gap-8 md:gap-6 relative">
+                {routeDays.map((d, i) => (
+                  <div key={d.day} className="relative c-fade-up" style={{ animationDelay: `${0.1 * i}s` }}>
+                    <div className="flex md:flex-col items-center md:items-start gap-4 md:gap-0">
+                      <div
+                        className="c-pulse flex h-16 w-16 shrink-0 items-center justify-center rounded-full c-mono text-xl font-bold"
+                        style={{ background: 'var(--c-bg-soft)', border: '2px solid var(--c-cyan)', color: 'var(--c-cyan)' }}
+                      >
+                        {d.day}
+                      </div>
+                      <div className="md:mt-5">
+                        <h3 className="c-display text-lg font-bold">{d.label}</h3>
+                        <p className="mt-1.5 text-sm leading-relaxed max-w-[240px]" style={{ color: 'var(--c-ink-soft)' }}>
+                          {d.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <p className="text-xs mt-1" style={{ color: 'var(--c-ink-soft)' }}>
-                В среднем у участников после программы
-              </p>
             </div>
           </div>
         </div>
@@ -141,7 +230,7 @@ const Career = () => {
         <div className="c-container">
           <div className="max-w-xl">
             <span className="c-tag">
-              <Icon name="MessageCircleQuestion" size={14} /> Знакомые вопросы
+              <Icon name="MessageCircleQuestion" size={13} /> Знакомые вопросы
             </span>
             <h2 className="mt-4 text-3xl md:text-4xl font-bold leading-tight">
               Типичные запросы участников
@@ -153,7 +242,7 @@ const Career = () => {
               <div key={r.text} className="c-card p-7 flex items-start gap-4">
                 <span
                   className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl"
-                  style={{ background: 'var(--c-bg-soft)', color: 'var(--c-lime)' }}
+                  style={{ background: 'var(--c-bg-soft)', color: 'var(--c-cyan)' }}
                 >
                   <Icon name={r.icon} size={20} />
                 </span>
@@ -168,7 +257,7 @@ const Career = () => {
         <div className="c-container">
           <div className="max-w-xl">
             <span className="c-tag">
-              <Icon name="Target" size={14} /> Для кого программа
+              <Icon name="Target" size={13} /> Для кого программа
             </span>
             <h2 className="mt-4 text-3xl md:text-4xl font-bold leading-tight">
               Контекст запросов
@@ -183,7 +272,7 @@ const Career = () => {
               <div key={a.title} className="c-card p-7">
                 <span
                   className="flex h-12 w-12 items-center justify-center rounded-xl"
-                  style={{ background: 'var(--c-bg)', color: 'var(--c-lime)' }}
+                  style={{ background: 'var(--c-bg)', color: 'var(--c-cyan)' }}
                 >
                   <Icon name={a.icon} size={22} />
                 </span>
@@ -211,7 +300,7 @@ const Career = () => {
 
           <div>
             <span className="c-tag">
-              <Icon name="Sparkles" size={14} /> Тренер программы
+              <Icon name="Sparkles" size={13} /> Тренер программы
             </span>
             <h2 className="mt-4 text-3xl md:text-4xl font-bold leading-tight">
               Елена <span className="c-grad-text">Ширыкалова</span>
@@ -227,7 +316,7 @@ const Career = () => {
                 <div key={c.text} className="flex items-center gap-3 c-card px-5 py-4">
                   <span
                     className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg"
-                    style={{ background: 'var(--c-bg-soft)', color: 'var(--c-lime)' }}
+                    style={{ background: 'var(--c-bg-soft)', color: 'var(--c-cyan)' }}
                   >
                     <Icon name={c.icon} size={18} />
                   </span>
@@ -237,7 +326,7 @@ const Career = () => {
             </div>
 
             <div className="mt-4 flex items-center gap-3 c-card px-5 py-4 max-w-md">
-              <Icon name="Clock" size={18} style={{ color: 'var(--c-lime)' }} className="shrink-0" />
+              <Icon name="Clock" size={18} style={{ color: 'var(--c-cyan)' }} className="shrink-0" />
               <span className="text-sm">
                 Длительность — 3 дня: 7 августа (вечер), 8 и 9 августа (весь день) 2026 года
               </span>
@@ -250,7 +339,7 @@ const Career = () => {
         <div className="c-container">
           <div className="max-w-xl">
             <span className="c-tag">
-              <Icon name="Wallet" size={14} /> Стоимость участия
+              <Icon name="Wallet" size={13} /> Стоимость участия
             </span>
             <h2 className="mt-4 text-3xl md:text-4xl font-bold leading-tight">
               Выберите формат участия
@@ -265,15 +354,15 @@ const Career = () => {
               <div
                 key={p.slug}
                 className="c-card p-8 flex flex-col"
-                style={p.featured ? { border: '1.5px solid var(--c-lime)' } : undefined}
+                style={p.featured ? { border: '1.5px solid var(--c-cyan)' } : undefined}
               >
                 <div className="flex items-center justify-between">
                   <span
-                    className="rounded-full px-3 py-1 text-xs font-semibold"
+                    className="rounded-full px-3 py-1 text-xs font-semibold c-mono"
                     style={
                       p.featured
-                        ? { background: 'var(--c-lime)', color: '#0e0f11' }
-                        : { background: 'var(--c-bg)', color: 'var(--c-lime)' }
+                        ? { background: 'var(--c-cyan)', color: '#06090b' }
+                        : { background: 'var(--c-bg)', color: 'var(--c-cyan)' }
                     }
                   >
                     {p.tag}
@@ -300,7 +389,7 @@ const Career = () => {
                         name="Check"
                         size={16}
                         className="mt-0.5 shrink-0"
-                        style={{ color: 'var(--c-lime)' }}
+                        style={{ color: 'var(--c-cyan)' }}
                       />
                       <span>{pt}</span>
                     </li>
@@ -325,12 +414,12 @@ const Career = () => {
             className="relative overflow-hidden rounded-[2rem] p-10 md:p-16 text-center"
             style={{ background: 'var(--c-card)', border: '1px solid var(--c-border)' }}
           >
-            <div className="c-glow w-64 h-64 -top-16 left-1/4" style={{ background: 'var(--c-lime)' }} />
-            <div className="c-glow w-64 h-64 -bottom-16 right-1/4" style={{ background: 'var(--c-blue)' }} />
+            <div className="c-glow w-64 h-64 -top-16 left-1/4" style={{ background: 'var(--c-cyan)' }} />
+            <div className="c-glow w-64 h-64 -bottom-16 right-1/4" style={{ background: 'var(--c-cyan-dim)' }} />
 
             <div className="relative max-w-xl mx-auto">
               <span className="c-tag">
-                <Icon name="Gift" size={14} /> Бесплатная консультация по целям!
+                <Icon name="Gift" size={13} /> Бесплатная консультация по целям!
               </span>
 
               <h2 className="mt-6 text-3xl md:text-5xl font-bold leading-tight">
@@ -347,7 +436,7 @@ const Career = () => {
                 <div className="mt-9 c-card p-8 max-w-md mx-auto c-fade-up">
                   <div
                     className="mx-auto flex h-14 w-14 items-center justify-center rounded-full"
-                    style={{ background: 'var(--c-lime)', color: '#0e0f11' }}
+                    style={{ background: 'var(--c-cyan)', color: '#06090b' }}
                   >
                     <Icon name="Check" size={26} />
                   </div>
@@ -389,12 +478,12 @@ const Career = () => {
           <div>
             <div className="flex items-center gap-2.5">
               <span
-                className="flex h-9 w-9 items-center justify-center rounded-xl"
-                style={{ background: 'var(--c-lime)', color: '#0e0f11' }}
+                className="flex h-9 w-9 items-center justify-center rounded-lg"
+                style={{ background: 'var(--c-cyan)', color: '#06090b' }}
               >
                 <Icon name="Zap" size={18} />
               </span>
-              <span className="c-display text-xl font-bold">Рост</span>
+              <span className="c-display text-lg font-bold">Точка Старта</span>
             </div>
             <p className="mt-4 max-w-sm text-sm leading-relaxed" style={{ color: 'var(--c-ink-soft)' }}>
               Программа «Точка Старта» для тех, кто хочет превратить личностный рост в конкретный
@@ -405,16 +494,9 @@ const Career = () => {
           <div>
             <h4 className="font-semibold mb-4">Разделы</h4>
             <ul className="space-y-2.5 text-sm" style={{ color: 'var(--c-ink-soft)' }}>
-              {[
-                { l: 'О программе', h: '#c-program' },
-                { l: 'Стоимость', h: '#c-plans' },
-                { l: 'Заявка', h: '#c-form' },
-              ].map((i) => (
+              {navLinks.map((i) => (
                 <li key={i.h}>
-                  <button
-                    onClick={() => document.querySelector(i.h)?.scrollIntoView({ behavior: 'smooth' })}
-                    className="hover:opacity-70 transition-opacity"
-                  >
+                  <button onClick={() => scrollTo(i.h)} className="hover:opacity-70 transition-opacity">
                     {i.l}
                   </button>
                 </li>
@@ -442,7 +524,7 @@ const Career = () => {
           className="c-container mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm"
           style={{ borderTop: '1px solid var(--c-border)', color: 'var(--c-ink-soft)' }}
         >
-          <span>© 2026 Рост. Все права защищены.</span>
+          <span>© 2026 Точка Старта. Все права защищены.</span>
           <span>Сделано для тех, кто добивается результата</span>
         </div>
       </footer>
