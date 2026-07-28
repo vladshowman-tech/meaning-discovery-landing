@@ -146,12 +146,12 @@ const Career = () => {
         </div>
       )}
 
-      <section className="relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-28 c-grid-line">
+      <section id="c-route" className="relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-28 c-grid-line">
         <div className="c-glow w-96 h-96 -top-20 -left-20" style={{ background: 'var(--c-cyan)' }} />
         <div className="c-glow w-80 h-80 top-10 -right-24" style={{ background: 'var(--c-cyan-dim)' }} />
 
         <div className="c-container relative">
-          <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-10 items-center">
+          <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
             <div>
               <span className="c-tag c-fade-up">
                 <Icon name="Terminal" size={13} /> ТОЧКА_СТАРТА // 07–09.08.2026
@@ -185,10 +185,29 @@ const Career = () => {
                   <Icon name="Info" size={16} /> О программе
                 </button>
               </div>
+
+              <div className="mt-10 lg:hidden flex flex-col gap-3">
+                {routeDays.map((d, i) => (
+                  <div key={d.day} className="c-card p-5 flex items-start gap-4 c-fade-up" style={{ animationDelay: `${0.1 * i}s` }}>
+                    <div
+                      className="c-pulse flex h-12 w-12 shrink-0 items-center justify-center rounded-full c-mono text-base font-bold"
+                      style={{ background: 'var(--c-bg-soft)', border: '2px solid var(--c-cyan)', color: 'var(--c-cyan)' }}
+                    >
+                      {d.day}
+                    </div>
+                    <div>
+                      <h3 className="c-display text-base font-bold">{d.label}</h3>
+                      <p className="mt-1 text-sm leading-relaxed" style={{ color: 'var(--c-ink-soft)' }}>
+                        {d.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className="relative hidden lg:block h-[360px] c-fade-up" style={{ animationDelay: '0.3s' }}>
-              <svg viewBox="0 0 320 360" className="w-full h-full overflow-visible">
+            <div className="relative hidden lg:block h-[420px] c-fade-up" style={{ animationDelay: '0.3s' }}>
+              <svg viewBox="0 0 360 420" className="w-full h-full overflow-visible">
                 <defs>
                   <linearGradient id="c-rise-grad" x1="0" y1="1" x2="0" y2="0">
                     <stop offset="0%" stopColor="var(--c-cyan-dim)" />
@@ -196,10 +215,10 @@ const Career = () => {
                   </linearGradient>
                 </defs>
 
-                <line x1="20" y1="340" x2="300" y2="340" stroke="var(--c-border)" strokeWidth="1.5" />
+                <line x1="20" y1="390" x2="340" y2="390" stroke="var(--c-border)" strokeWidth="1.5" />
 
                 <path
-                  d="M 30 320 C 80 300, 90 260, 130 230 C 170 200, 180 150, 220 110 C 250 80, 260 50, 290 25"
+                  d="M 40 370 C 90 350, 100 260, 160 235 C 200 218, 230 130, 300 70"
                   className="c-rise-path"
                 />
 
@@ -207,62 +226,45 @@ const Career = () => {
                   <animateMotion
                     dur="3.5s"
                     repeatCount="indefinite"
-                    path="M 30 320 C 80 300, 90 260, 130 230 C 170 200, 180 150, 220 110 C 250 80, 260 50, 290 25"
+                    path="M 40 370 C 90 350, 100 260, 160 235 C 200 218, 230 130, 300 70"
                   />
                 </circle>
 
-                <circle cx="290" cy="25" r="5" fill="var(--c-sky)" opacity="0.9" />
-              </svg>
-
-              <div
-                className="absolute right-2 top-2 c-card px-4 py-3"
-              >
-                <div className="flex items-center gap-2" style={{ color: 'var(--c-sky)' }}>
-                  <Icon name="TrendingUp" size={16} />
-                  <span className="c-mono text-sm font-bold">+40%</span>
-                </div>
-                <p className="text-xs mt-0.5" style={{ color: 'var(--c-ink-soft)' }}>
-                  средний рост дохода
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div id="c-route" className="mt-20 pt-4">
-            <span className="c-tag">
-              <Icon name="Route" size={13} /> Маршрут интенсива
-            </span>
-
-            <div className="mt-10 relative">
-              <svg
-                className="hidden md:block absolute left-0 right-0 top-8 w-full"
-                height="16"
-                preserveAspectRatio="none"
-                viewBox="0 0 100 1"
-              >
-                <line x1="8" y1="0.5" x2="92" y2="0.5" className="c-route-line" />
-              </svg>
-
-              <div className="grid md:grid-cols-3 gap-8 md:gap-6 relative">
-                {routeDays.map((d, i) => (
-                  <div key={d.day} className="relative c-fade-up" style={{ animationDelay: `${0.1 * i}s` }}>
-                    <div className="flex md:flex-col items-center md:items-start gap-4 md:gap-0">
-                      <div
-                        className="c-pulse flex h-16 w-16 shrink-0 items-center justify-center rounded-full c-mono text-xl font-bold"
-                        style={{ background: 'var(--c-bg-soft)', border: '2px solid var(--c-cyan)', color: 'var(--c-cyan)' }}
-                      >
-                        {d.day}
-                      </div>
-                      <div className="md:mt-5">
-                        <h3 className="c-display text-lg font-bold">{d.label}</h3>
-                        <p className="mt-1.5 text-sm leading-relaxed max-w-[240px]" style={{ color: 'var(--c-ink-soft)' }}>
-                          {d.desc}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                {[
+                  { x: 40, y: 370 },
+                  { x: 160, y: 235 },
+                  { x: 300, y: 70 },
+                ].map((p, i) => (
+                  <circle
+                    key={i}
+                    cx={p.x}
+                    cy={p.y}
+                    r="7"
+                    fill="var(--c-bg-soft)"
+                    stroke="var(--c-sky)"
+                    strokeWidth="2.5"
+                  />
                 ))}
-              </div>
+              </svg>
+
+              {[
+                { day: '07', label: routeDays[0].label, left: '4%', top: '82%' },
+                { day: '08', label: routeDays[1].label, left: '38%', top: '48%' },
+                { day: '09', label: routeDays[2].label, left: '76%', top: '5%' },
+              ].map((n, i) => (
+                <div
+                  key={n.day}
+                  className="absolute c-card px-4 py-3 c-fade-up"
+                  style={{ left: n.left, top: n.top, animationDelay: `${0.4 + i * 0.15}s` }}
+                >
+                  <div className="flex items-center gap-2" style={{ color: 'var(--c-sky)' }}>
+                    <span className="c-mono text-sm font-bold">{n.day}</span>
+                  </div>
+                  <p className="text-xs mt-0.5 whitespace-nowrap" style={{ color: 'var(--c-ink)' }}>
+                    {n.label}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
