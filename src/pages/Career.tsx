@@ -151,38 +151,80 @@ const Career = () => {
         <div className="c-glow w-80 h-80 top-10 -right-24" style={{ background: 'var(--c-cyan-dim)' }} />
 
         <div className="c-container relative">
-          <div className="max-w-3xl">
-            <span className="c-tag c-fade-up">
-              <Icon name="Terminal" size={13} /> ТОЧКА_СТАРТА // 07–09.08.2026
-            </span>
+          <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-10 items-center">
+            <div>
+              <span className="c-tag c-fade-up">
+                <Icon name="Terminal" size={13} /> ТОЧКА_СТАРТА // 07–09.08.2026
+              </span>
 
-            <h1
-              className="mt-6 text-4xl sm:text-5xl md:text-[3.6rem] font-bold leading-[1.05] c-fade-up"
-              style={{ animationDelay: '0.08s' }}
-            >
-              Достижение конкретных целей
-              <br />
-              <span className="c-grad-text">и карьерный рост</span>
-            </h1>
+              <h1
+                className="mt-6 text-4xl sm:text-5xl md:text-[3.6rem] font-bold leading-[1.05] c-fade-up"
+                style={{ animationDelay: '0.08s' }}
+              >
+                Достижение конкретных целей
+                <br />
+                <span className="c-grad-text">и карьерный рост</span>
+              </h1>
 
-            <p
-              className="mt-6 max-w-xl text-lg c-fade-up"
-              style={{ color: 'var(--c-ink-soft)', animationDelay: '0.16s' }}
-            >
-              Многие участники рассматривают личностный рост как инструмент для решения
-              прикладных задач.
-            </p>
+              <p
+                className="mt-6 max-w-xl text-lg c-fade-up"
+                style={{ color: 'var(--c-ink-soft)', animationDelay: '0.16s' }}
+              >
+                Многие участники рассматривают личностный рост как инструмент для решения
+                прикладных задач.
+              </p>
 
-            <div
-              className="mt-9 flex flex-wrap gap-3 c-fade-up"
-              style={{ animationDelay: '0.24s' }}
-            >
-              <button onClick={() => scrollTo('#c-form')} className="c-btn text-base">
-                Оставить заявку <Icon name="ArrowRight" size={17} />
-              </button>
-              <button onClick={() => scrollTo('#c-program')} className="c-btn-outline text-base">
-                <Icon name="Info" size={16} /> О программе
-              </button>
+              <div
+                className="mt-9 flex flex-wrap gap-3 c-fade-up"
+                style={{ animationDelay: '0.24s' }}
+              >
+                <button onClick={() => scrollTo('#c-form')} className="c-btn text-base">
+                  Оставить заявку <Icon name="ArrowRight" size={17} />
+                </button>
+                <button onClick={() => scrollTo('#c-program')} className="c-btn-outline text-base">
+                  <Icon name="Info" size={16} /> О программе
+                </button>
+              </div>
+            </div>
+
+            <div className="relative hidden lg:block h-[360px] c-fade-up" style={{ animationDelay: '0.3s' }}>
+              <svg viewBox="0 0 320 360" className="w-full h-full overflow-visible">
+                <defs>
+                  <linearGradient id="c-rise-grad" x1="0" y1="1" x2="0" y2="0">
+                    <stop offset="0%" stopColor="var(--c-cyan-dim)" />
+                    <stop offset="100%" stopColor="var(--c-sky)" />
+                  </linearGradient>
+                </defs>
+
+                <line x1="20" y1="340" x2="300" y2="340" stroke="var(--c-border)" strokeWidth="1.5" />
+
+                <path
+                  d="M 30 320 C 80 300, 90 260, 130 230 C 170 200, 180 150, 220 110 C 250 80, 260 50, 290 25"
+                  className="c-rise-path"
+                />
+
+                <circle r="6" className="c-rise-dot">
+                  <animateMotion
+                    dur="3.5s"
+                    repeatCount="indefinite"
+                    path="M 30 320 C 80 300, 90 260, 130 230 C 170 200, 180 150, 220 110 C 250 80, 260 50, 290 25"
+                  />
+                </circle>
+
+                <circle cx="290" cy="25" r="5" fill="var(--c-sky)" opacity="0.9" />
+              </svg>
+
+              <div
+                className="absolute right-2 top-2 c-card px-4 py-3"
+              >
+                <div className="flex items-center gap-2" style={{ color: 'var(--c-sky)' }}>
+                  <Icon name="TrendingUp" size={16} />
+                  <span className="c-mono text-sm font-bold">+40%</span>
+                </div>
+                <p className="text-xs mt-0.5" style={{ color: 'var(--c-ink-soft)' }}>
+                  средний рост дохода
+                </p>
+              </div>
             </div>
           </div>
 
