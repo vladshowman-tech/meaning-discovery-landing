@@ -1,45 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
-
-type Option = {
-  tag: string;
-  title: string;
-  desc: string;
-  audience: string;
-  price: string;
-  featured?: boolean;
-  points: string[];
-};
-
-const options: Option[] = [
-  {
-    tag: 'Стандарт',
-    title: 'Участие в программе',
-    desc: 'Полное прохождение программы «Точка Старта» для всех, кто идёт своим путём.',
-    audience: 'Для всех',
-    price: '25 000 ₽',
-    points: ['Все модули программы', 'Практики и задания', 'Разбор в мини-группе', 'Доступ к материалам'],
-  },
-  {
-    tag: 'Льготный',
-    title: 'Для социальных групп',
-    desc: 'Специальная цена для студентов, пенсионеров, многодетных и других социальных категорий.',
-    audience: 'По подтверждению статуса',
-    price: '15 500 ₽',
-    points: ['Все модули программы', 'Практики и задания', 'Разбор в мини-группе', 'Скидка по документу'],
-  },
-  {
-    tag: 'Вместе',
-    title: 'Для супругов',
-    desc: 'Особый формат для пар, которые проходят программу вдвоём и растут вместе.',
-    audience: 'Двое участников',
-    price: '35 000 ₽',
-    featured: true,
-    points: ['Участие для двоих', 'Парные практики', 'Совместный разбор', 'Личное сопровождение пары'],
-  },
-];
+import { plans } from '@/data/plans';
 
 const Programs = () => {
+  const navigate = useNavigate();
+
   return (
     <section id="programs" className="relative py-24 md:py-32">
       <div className="absolute inset-x-0 top-1/3 h-96 aurora opacity-40 blur-2xl pointer-events-none" />
@@ -57,9 +23,9 @@ const Programs = () => {
         </div>
 
         <div className="mt-14 grid lg:grid-cols-3 gap-6">
-          {options.map((p) => (
+          {plans.map((p) => (
             <div
-              key={p.title}
+              key={p.slug}
               className={`relative flex flex-col rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 ${
                 p.featured
                   ? 'bg-gradient-to-b from-secondary to-card border border-primary/40 glow'
@@ -94,9 +60,7 @@ const Programs = () => {
               </ul>
 
               <Button
-                onClick={() =>
-                  document.querySelector('#cta')?.scrollIntoView({ behavior: 'smooth' })
-                }
+                onClick={() => navigate(`/oplata/${p.slug}`)}
                 className={`mt-7 rounded-full h-12 ${
                   p.featured ? '' : 'bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground'
                 }`}
