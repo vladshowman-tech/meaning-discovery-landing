@@ -38,8 +38,9 @@ const credentials = [
 ];
 
 const navLinks = [
-  { l: 'О программе', h: '#c-program' },
   { l: 'Маршрут', h: '#c-route' },
+  { l: 'Программа по дням', h: '#c-days' },
+  { l: 'О программе', h: '#c-program' },
   { l: 'Стоимость', h: '#c-plans' },
   { l: 'Заявка', h: '#c-form' },
 ];
@@ -50,6 +51,44 @@ const routeDays = [
   { day: '09', label: 'День результата', desc: 'Закрепление навыков, план действий и конкретные шаги к цели.' },
 ];
 
+const dayPrograms = [
+  {
+    day: '07',
+    title: 'Вечер знакомства',
+    theme: 'Точка старта и личный вектор',
+    steps: [
+      'Знакомство с группой и правила интенсива',
+      'Диагностика текущей точки: доход, роль, амбиции',
+      'Выявление ограничивающих установок в карьере',
+      'Формулировка личной цели на 3 дня программы',
+    ],
+  },
+  {
+    day: '08',
+    title: 'День практики',
+    theme: 'Лидерство, харизма и влияние',
+    steps: [
+      'Работа с уверенностью и правом на руководство',
+      'Практики харизматичной коммуникации',
+      'Разбор реальных кейсов управления командой',
+      'Техники влияния и убедительной аргументации',
+      'Парная практика обратной связи',
+    ],
+  },
+  {
+    day: '09',
+    title: 'День результата',
+    theme: 'Конкретный план действий',
+    steps: [
+      'Сборка личной стратегии карьерного роста',
+      'План запуска проекта или повышения дохода',
+      'Проработка страхов перед новым уровнем ответственности',
+      'Постановка целей на 30/60/90 дней',
+      'Итоговый разбор и обратная связь тренера',
+    ],
+  },
+];
+
 const Career = () => {
   const navigate = useNavigate();
   const [name, setName] = useState('');
@@ -57,6 +96,7 @@ const Career = () => {
   const [sent, setSent] = useState(false);
   const [error, setError] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeDay, setActiveDay] = useState(0);
 
   const scrollTo = (h: string) => {
     setMenuOpen(false);
@@ -266,6 +306,83 @@ const Career = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="c-days" className="relative py-20 md:py-28" style={{ background: 'var(--c-bg-soft)' }}>
+        <div className="c-container">
+          <div className="max-w-xl">
+            <span className="c-tag">
+              <Icon name="CalendarClock" size={13} /> Путь интенсива
+            </span>
+            <h2 className="mt-4 text-3xl md:text-4xl font-bold leading-tight">
+              Программа по дням
+            </h2>
+            <p className="mt-4 text-lg" style={{ color: 'var(--c-ink-soft)' }}>
+              Три дня — три шага одного маршрута: от знакомства к результату.
+            </p>
+          </div>
+
+          <div className="mt-10 flex flex-wrap gap-3">
+            {dayPrograms.map((d, i) => (
+              <button
+                key={d.day}
+                onClick={() => setActiveDay(i)}
+                className="flex items-center gap-3 rounded-2xl px-5 py-3.5 transition-all duration-300"
+                style={
+                  activeDay === i
+                    ? {
+                        background: 'linear-gradient(135deg, var(--c-sky), var(--c-cyan))',
+                        color: '#05080f',
+                        boxShadow: '0 8px 28px -8px rgba(77, 163, 255, 0.5)',
+                      }
+                    : {
+                        background: 'var(--c-card)',
+                        color: 'var(--c-ink)',
+                        border: '1px solid var(--c-border)',
+                      }
+                }
+              >
+                <span className="c-mono text-lg font-bold">{d.day}</span>
+                <span className="text-sm font-semibold hidden sm:inline">{d.title}</span>
+              </button>
+            ))}
+          </div>
+
+          <div className="mt-8 c-card p-8 md:p-10 c-fade-up" key={activeDay}>
+            <div className="flex items-center gap-4 flex-wrap">
+              <div
+                className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl c-mono text-xl font-bold"
+                style={{ background: 'var(--c-bg-soft)', border: '2px solid var(--c-cyan)', color: 'var(--c-sky)' }}
+              >
+                {dayPrograms[activeDay].day}
+              </div>
+              <div>
+                <h3 className="c-display text-2xl font-bold">{dayPrograms[activeDay].title}</h3>
+                <p className="text-sm mt-1" style={{ color: 'var(--c-cyan)' }}>
+                  {dayPrograms[activeDay].theme}
+                </p>
+              </div>
+            </div>
+
+            <ul className="mt-7 grid sm:grid-cols-2 gap-3">
+              {dayPrograms[activeDay].steps.map((step, i) => (
+                <li
+                  key={step}
+                  className="flex items-start gap-3 rounded-xl px-4 py-3.5"
+                  style={{ background: 'var(--c-bg-soft)', border: '1px solid var(--c-border)' }}
+                >
+                  <span
+                    className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full c-mono text-xs font-bold mt-0.5"
+                    style={{ background: 'var(--c-cyan)', color: '#05080f' }}
+                  >
+                    {i + 1}
+                  </span>
+                  <span className="text-sm leading-relaxed">{step}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
