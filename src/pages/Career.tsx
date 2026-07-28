@@ -57,7 +57,7 @@ const dayPrograms = [
     title: 'Вечер знакомства',
     theme: 'Точка старта и личный вектор',
     steps: [
-      'Знакомство с группой и правила интенсива',
+      'Знакомство с группой и правила программы',
       'Диагностика текущей точки: доход, роль, амбиции',
       'Выявление ограничивающих установок в карьере',
       'Формулировка личной цели на 3 дня программы',
@@ -314,7 +314,7 @@ const Career = () => {
         <div className="c-container">
           <div className="max-w-xl">
             <span className="c-tag">
-              <Icon name="CalendarClock" size={13} /> Путь интенсива
+              <Icon name="CalendarClock" size={13} /> Путь программы
             </span>
             <h2 className="mt-4 text-3xl md:text-4xl font-bold leading-tight">
               Программа по дням
