@@ -27,7 +27,7 @@ const Cta = () => {
           <div className="relative max-w-2xl mx-auto">
             <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-sm">
               <Icon name="Gift" size={16} className="text-primary" />
-              Бесплатный вводный урок
+              Бесплатная консультация по целям!
             </div>
 
             <h2 className="mt-6 font-display text-4xl md:text-6xl font-semibold leading-[1.02]">
@@ -36,7 +36,7 @@ const Cta = () => {
               <span className="text-gradient italic">к себе настоящему</span>
             </h2>
             <p className="mt-5 text-lg text-muted-foreground">
-              Оставьте контакты — пришлём вводный урок и поможем выбрать программу под ваш запрос.
+              Оставьте контакты — проведем бесплатную консультацию по целям и поможем зайти на программу с вашим запросом.
             </p>
 
             {sent ? (
@@ -65,7 +65,7 @@ const Cta = () => {
                     className="h-14 rounded-full bg-card/60 border-border px-6 flex-1"
                   />
                   <Button type="submit" size="lg" className="h-14 rounded-full px-8 glow font-medium">
-                    Получить урок
+                    Записаться на консультацию по целям
                   </Button>
                 </div>
                 {error && <p className="text-sm text-destructive">{error}</p>}
