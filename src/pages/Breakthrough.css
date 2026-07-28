@@ -19,9 +19,9 @@
 .break-page h2,
 .break-page h3,
 .break-page .b-display {
-  font-family: 'Bebas Neue', sans-serif;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
+  font-family: 'Sora', sans-serif;
+  letter-spacing: -0.01em;
+  font-weight: 700;
 }
 
 .b-container {
