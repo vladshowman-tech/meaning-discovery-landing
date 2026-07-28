@@ -45,13 +45,13 @@ const Footer = () => {
             <h4 className="font-body font-semibold mb-4">Контакты</h4>
             <ul className="space-y-2.5 text-sm text-muted-foreground">
               <li className="flex items-center gap-2">
-                <Icon name="Mail" size={15} /> hello@tochka-starta.ru
+                <Icon name="Mail" size={15} /> activationmission@yandex.ru
               </li>
               <li className="flex items-center gap-2">
-                <Icon name="Send" size={15} /> Telegram
+                <Icon name="Send" size={15} /> @missiontrue
               </li>
               <li className="flex items-center gap-2">
-                <Icon name="Phone" size={15} /> +7 900 000-00-00
+                <Icon name="Phone" size={15} /> +7 964 488-73-65
               </li>
             </ul>
           </div>
