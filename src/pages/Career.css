@@ -1,0 +1,159 @@
+.career-page {
+  --c-bg: #0e0f11;
+  --c-bg-soft: #17191c;
+  --c-card: #1c1e22;
+  --c-ink: #f4f5f0;
+  --c-ink-soft: #9a9da3;
+  --c-lime: #d4fb2b;
+  --c-blue: #4d7cff;
+  --c-border: #2a2d31;
+
+  background: var(--c-bg);
+  color: var(--c-ink);
+  font-family: 'Space Grotesk', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.career-page h1,
+.career-page h2,
+.career-page h3,
+.career-page .c-display {
+  font-family: 'Unbounded', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.c-container {
+  max-width: 76rem;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.c-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  background: var(--c-bg-soft);
+  border: 1px solid var(--c-border);
+  color: var(--c-lime);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.c-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.9rem;
+  background: var(--c-lime);
+  color: #0e0f11;
+  font-weight: 700;
+  padding: 1.05rem 2rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 0 0 rgba(212, 251, 43, 0);
+  border: none;
+  cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.c-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px -12px rgba(212, 251, 43, 0.45);
+}
+
+.c-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.9rem;
+  background: transparent;
+  color: var(--c-ink);
+  font-weight: 600;
+  padding: 1rem 1.9rem;
+  border: 1.5px solid var(--c-border);
+  transition: all 0.25s ease;
+  cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.c-btn-outline:hover {
+  border-color: var(--c-lime);
+  color: var(--c-lime);
+}
+
+.c-card {
+  background: var(--c-card);
+  border: 1px solid var(--c-border);
+  border-radius: 1.4rem;
+  transition: transform 0.35s ease, border-color 0.35s ease;
+}
+
+.c-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--c-lime);
+}
+
+.c-input {
+  width: 100%;
+  border-radius: 0.9rem;
+  border: 1.5px solid var(--c-border);
+  background: var(--c-bg-soft);
+  padding: 1rem 1.4rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  color: var(--c-ink);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.c-input:focus {
+  border-color: var(--c-lime);
+}
+
+.c-input::placeholder {
+  color: #6b6e73;
+}
+
+.c-grad-text {
+  background: linear-gradient(90deg, var(--c-lime), var(--c-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.c-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+@keyframes c-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.c-fade-up {
+  animation: c-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.c-grid-line {
+  background-image:
+    linear-gradient(to right, var(--c-border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--c-border) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
