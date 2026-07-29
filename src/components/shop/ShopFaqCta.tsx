@@ -150,7 +150,7 @@ const ShopFaqCta = () => {
               <MissionBrand size={32} textClassName="s-display text-lg font-bold text-[var(--s-ink)]" />
             </div>
             <p className="mt-4 max-w-sm text-sm text-[var(--s-ink-soft)] leading-relaxed">
-              Тренинговая компания «Миссия» — четыре программы личностного развития
+              Объединение «Миссия» — четыре программы личностного развития
               для тех, кто хочет расти осознанно.
             </p>
           </div>

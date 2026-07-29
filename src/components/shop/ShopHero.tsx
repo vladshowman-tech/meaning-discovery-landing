@@ -17,7 +17,7 @@ const ShopHero = () => {
       <div className="s-container relative">
         <div className="max-w-2xl mx-auto text-center s-fade-up">
           <span className="s-tag">
-            <Icon name="Sparkles" size={14} /> Тренинговая компания «Миссия»
+            <Icon name="Sparkles" size={14} /> Объединение «Миссия»
           </span>
           <h1 className="mt-5 s-display text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] text-[var(--s-ink)]">
             Курсы и программы
