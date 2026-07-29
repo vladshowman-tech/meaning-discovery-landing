@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Shop from "./pages/Shop";
 import Home from "./pages/Home";
 import Index from "./pages/Index";
 import Relationships from "./pages/Relationships";
@@ -21,11 +22,12 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Shop />} />
           <Route path="/1" element={<Index />} />
           <Route path="/2" element={<Relationships />} />
           <Route path="/3" element={<Career />} />
           <Route path="/4" element={<Breakthrough />} />
+          <Route path="/5" element={<Home />} />
           <Route path="/oplata/:slug" element={<Payment />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
