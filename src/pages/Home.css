@@ -1,0 +1,143 @@
+.home-page {
+  --m-bg: #fbfaf7;
+  --m-bg-soft: #f3f0e8;
+  --m-card: #ffffff;
+  --m-ink: #17171a;
+  --m-ink-soft: #6f6d66;
+  --m-accent: #b6772e;
+  --m-accent-soft: #d59a52;
+  --m-sage: #6f8f68;
+  --m-line: #e7e2d6;
+
+  background: var(--m-bg);
+  color: var(--m-ink);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.home-page h1,
+.home-page h2,
+.home-page h3,
+.home-page .m-serif {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: -0.01em;
+}
+
+.m-container {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.m-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--m-accent);
+}
+
+.m-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  background: var(--m-ink);
+  color: var(--m-bg);
+  font-weight: 600;
+  padding: 1rem 2.1rem;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.m-btn:hover {
+  transform: translateY(-2px);
+  background: var(--m-accent);
+  box-shadow: 0 14px 30px -14px rgba(182, 119, 46, 0.55);
+}
+
+.m-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--m-ink);
+  font-weight: 600;
+  padding: 0.95rem 2rem;
+  border: 1.5px solid var(--m-line);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.m-btn-outline:hover {
+  border-color: var(--m-ink);
+}
+
+.m-card {
+  background: var(--m-card);
+  border: 1px solid var(--m-line);
+  border-radius: 1.5rem;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.m-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px -28px rgba(23, 23, 26, 0.16);
+  border-color: var(--m-ink);
+}
+
+.m-input {
+  width: 100%;
+  border-radius: 999px;
+  border: 1.5px solid var(--m-line);
+  background: #fff;
+  padding: 1rem 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: var(--m-ink);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.m-input:focus {
+  border-color: var(--m-accent);
+}
+
+.m-input::placeholder {
+  color: var(--m-ink-soft);
+}
+
+.m-accent-text {
+  color: var(--m-accent);
+  font-style: italic;
+}
+
+.m-num {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--m-accent);
+}
+
+@keyframes m-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.m-fade-up {
+  animation: m-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
