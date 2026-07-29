@@ -13,7 +13,6 @@ import MissionBrand from '@/components/MissionBrand';
 
 const links = [
   { label: 'О программе', href: '#benefits' },
-  { label: 'Ступени', href: '#stages' },
   { label: 'Отзывы', href: '#testimonials' },
   { label: 'Вопросы', href: '#faq' },
 ];

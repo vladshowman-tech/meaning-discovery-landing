@@ -35,7 +35,6 @@ const faqs = [
 
 const footerLinks = [
   { l: 'Что вы получите', h: '#benefits' },
-  { l: 'Ступени', h: '#stages' },
   { l: 'Отзывы', h: '#testimonials' },
   { l: 'Вопросы', h: '#faq' },
 ];
