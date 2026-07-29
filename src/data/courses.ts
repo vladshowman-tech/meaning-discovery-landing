@@ -29,7 +29,7 @@ export const courses: Course[] = [
   {
     route: '/2',
     tag: 'Ступень №2',
-    title: 'Гармония',
+    title: 'Я в игре',
     subtitle: 'Качество жизни и отношений',
     desc: 'Запрос на построение гармоничной жизни во всех её сферах: отношения, семья, работа, привычки.',
     img: 'https://cdn.poehali.dev/projects/35e9750e-aa05-49ef-b129-884fed200ea0/files/054e6a37-f606-4430-afed-8c15d453452d.jpg',
@@ -42,7 +42,7 @@ export const courses: Course[] = [
   {
     route: '/3',
     tag: 'Ступень №3',
-    title: 'Карьера',
+    title: 'Моя история',
     subtitle: 'Достижение конкретных целей',
     desc: 'Личностный рост как инструмент для решения прикладных задач: доход, рост, управленческие навыки.',
     img: 'https://cdn.poehali.dev/projects/35e9750e-aa05-49ef-b129-884fed200ea0/files/20c9a6b1-43ee-428f-8999-3004cda78470.jpg',
@@ -55,7 +55,7 @@ export const courses: Course[] = [
   {
     route: '/4',
     tag: 'Ступень №4',
-    title: 'Прорыв',
+    title: 'Денежный прорыв',
     subtitle: 'Выход из тупика',
     desc: 'Мощный внешний импульс, чтобы сдвинуться с мёртвой точки и преодолеть кризисное состояние.',
     img: 'https://cdn.poehali.dev/projects/35e9750e-aa05-49ef-b129-884fed200ea0/files/9f7e7aa9-b8f1-4d6c-9cc4-18d226bf5c46.jpg',
