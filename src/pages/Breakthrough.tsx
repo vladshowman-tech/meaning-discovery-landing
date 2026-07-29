@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 import MENTOR_IMG from '@/assets/mentor.jpg';
 import { plans } from '@/data/plans';
+import MissionBrand from '@/components/MissionBrand';
 import './Breakthrough.css';
 
 const HERO_IMG =
@@ -63,13 +64,7 @@ const Breakthrough = () => {
 
       <header className="relative b-container flex items-center justify-between py-7">
         <div className="flex items-center gap-2.5">
-          <span
-            className="flex h-10 w-10 items-center justify-center rounded"
-            style={{ background: 'var(--b-fire)', color: '#100d0c' }}
-          >
-            <Icon name="Flame" size={20} />
-          </span>
-          <span className="b-display text-2xl tracking-wide">Точка Старта</span>
+          <MissionBrand size={40} textClassName="b-display text-2xl tracking-wide" />
         </div>
         <button onClick={() => navigate('/')} className="b-btn-outline text-sm">
           <Icon name="ArrowLeft" size={15} /> На главную
@@ -421,13 +416,7 @@ const Breakthrough = () => {
         <div className="b-container grid md:grid-cols-[1.5fr_1fr_1fr] gap-10">
           <div>
             <div className="flex items-center gap-2.5">
-              <span
-                className="flex h-9 w-9 items-center justify-center rounded"
-                style={{ background: 'var(--b-fire)', color: '#100d0c' }}
-              >
-                <Icon name="Flame" size={18} />
-              </span>
-              <span className="b-display text-xl tracking-wide">Точка Старта</span>
+              <MissionBrand size={32} textClassName="b-display text-xl tracking-wide" />
             </div>
             <p className="mt-4 max-w-sm text-sm leading-relaxed" style={{ color: 'var(--b-ink-soft)' }}>
               Программа «Точка Старта» для тех, кто застрял в кризисе и ищет мощный импульс

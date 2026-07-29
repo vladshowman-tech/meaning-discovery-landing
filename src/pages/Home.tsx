@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
+import MissionBrand from '@/components/MissionBrand';
 
 const stages = [
   {
@@ -38,12 +39,7 @@ const Home = () => {
 
       <header className="relative container flex items-center justify-between py-6">
         <div className="flex items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground animate-pulse-ring">
-            <Icon name="Sparkle" size={18} />
-          </span>
-          <span className="font-display text-2xl font-semibold tracking-tight">
-            Точка<span className="text-gradient"> Старта</span>
-          </span>
+          <MissionBrand size={36} textClassName="font-display text-2xl font-semibold tracking-tight" />
         </div>
       </header>
 

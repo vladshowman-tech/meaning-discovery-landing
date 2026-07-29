@@ -4,6 +4,7 @@ import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { plans } from '@/data/plans';
+import MissionBrand from '@/components/MissionBrand';
 
 const Payment = () => {
   const { slug } = useParams();
@@ -36,12 +37,7 @@ const Payment = () => {
           onClick={() => navigate('/1')}
           className="flex items-center gap-2.5"
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground">
-            <Icon name="Sparkle" size={18} />
-          </span>
-          <span className="font-display text-2xl font-semibold tracking-tight">
-            Точка<span className="text-gradient"> Старта</span>
-          </span>
+          <MissionBrand size={36} textClassName="font-display text-2xl font-semibold tracking-tight" />
         </button>
         <Button variant="ghost" onClick={() => navigate('/1')} className="rounded-full">
           <Icon name="ArrowLeft" size={16} className="mr-2" /> На главную

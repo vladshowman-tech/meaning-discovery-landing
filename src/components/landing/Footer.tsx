@@ -1,4 +1,5 @@
 import Icon from '@/components/ui/icon';
+import MissionBrand from '@/components/MissionBrand';
 
 const Footer = () => {
   return (
@@ -7,12 +8,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-[1.5fr_1fr_1fr] gap-10">
           <div>
             <div className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                <Icon name="Sparkle" size={18} />
-              </span>
-              <span className="font-display text-2xl font-semibold">
-                Точка<span className="text-gradient"> Старта</span>
-              </span>
+              <MissionBrand size={36} textClassName="font-display text-2xl font-semibold" />
             </div>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground leading-relaxed">
               Ступень № 1. Программа для поиска смысла, самопознания и работы над собой.

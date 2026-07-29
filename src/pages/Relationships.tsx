@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 import MENTOR_IMG from '@/assets/mentor.jpg';
 import { plans } from '@/data/plans';
+import MissionBrand from '@/components/MissionBrand';
 import './Relationships.css';
 
 const HERO_IMG =
@@ -69,13 +70,7 @@ const Relationships = () => {
     <div className="harmony-page">
       <header className="relative h-container flex items-center justify-between py-7">
         <div className="flex items-center gap-2.5">
-          <span
-            className="flex h-10 w-10 items-center justify-center rounded-full"
-            style={{ background: 'var(--h-accent)', color: '#fff8f2' }}
-          >
-            <Icon name="Flower2" size={19} />
-          </span>
-          <span className="h-serif text-2xl font-semibold tracking-tight">Гармония</span>
+          <MissionBrand size={40} textClassName="h-serif text-2xl font-semibold tracking-tight" />
         </div>
         <button onClick={() => navigate('/')} className="h-btn-outline text-sm">
           <Icon name="ArrowLeft" size={15} /> На главную
@@ -402,13 +397,7 @@ const Relationships = () => {
         <div className="h-container grid md:grid-cols-[1.5fr_1fr_1fr] gap-10">
           <div>
             <div className="flex items-center gap-2.5">
-              <span
-                className="flex h-9 w-9 items-center justify-center rounded-full"
-                style={{ background: 'var(--h-accent)', color: '#fff8f2' }}
-              >
-                <Icon name="Flower2" size={18} />
-              </span>
-              <span className="text-2xl font-semibold">Гармония</span>
+              <MissionBrand size={36} textClassName="text-2xl font-semibold" />
             </div>
             <p className="mt-4 max-w-sm text-sm leading-relaxed" style={{ color: 'var(--h-ink-soft)' }}>
               Программа «Точка Старта» для построения гармоничной жизни во всех её сферах —

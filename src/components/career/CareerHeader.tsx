@@ -1,5 +1,6 @@
 import { NavigateFunction } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
+import MissionBrand from '@/components/MissionBrand';
 
 export type NavLink = { l: string; h: string };
 
@@ -17,13 +18,7 @@ const CareerHeader = ({ navigate, scrollTo, navLinks, menuOpen, setMenuOpen }: C
       <nav className="c-nav">
         <div className="c-container flex items-center justify-between py-4">
           <div className="flex items-center gap-2.5">
-            <span
-              className="flex h-9 w-9 items-center justify-center rounded-lg"
-              style={{ background: 'var(--c-cyan)', color: '#06090b' }}
-            >
-              <Icon name="Zap" size={17} />
-            </span>
-            <span className="c-display text-lg font-bold tracking-tight">Точка Старта</span>
+            <MissionBrand size={32} textClassName="c-display text-lg font-bold tracking-tight" />
           </div>
 
           <div className="hidden md:flex items-center gap-8">

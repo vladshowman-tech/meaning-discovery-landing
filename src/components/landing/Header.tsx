@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
+import MissionBrand from '@/components/MissionBrand';
 
 const links = [
   { label: 'Путь', href: '#path' },
@@ -34,12 +35,7 @@ const Header = () => {
     >
       <div className="container flex items-center justify-between">
         <button onClick={() => go('#top')} className="flex items-center gap-2.5 group">
-          <span className="relative flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground animate-pulse-ring">
-            <Icon name="Sparkle" size={18} />
-          </span>
-          <span className="font-display text-2xl font-semibold tracking-tight">
-            Точка<span className="text-gradient"> Старта</span>
-          </span>
+          <MissionBrand size={36} textClassName="font-display text-2xl font-semibold tracking-tight" />
         </button>
 
         <nav className="hidden md:flex items-center gap-8">

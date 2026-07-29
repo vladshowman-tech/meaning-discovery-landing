@@ -1,5 +1,6 @@
 import Icon from '@/components/ui/icon';
 import { NavLink } from '@/components/career/CareerHeader';
+import MissionBrand from '@/components/MissionBrand';
 
 interface CareerFormAndFooterProps {
   name: string;
@@ -95,13 +96,7 @@ const CareerFormAndFooter = ({
         <div className="c-container grid md:grid-cols-[1.5fr_1fr_1fr] gap-10">
           <div>
             <div className="flex items-center gap-2.5">
-              <span
-                className="flex h-9 w-9 items-center justify-center rounded-lg"
-                style={{ background: 'var(--c-cyan)', color: '#06090b' }}
-              >
-                <Icon name="Zap" size={18} />
-              </span>
-              <span className="c-display text-lg font-bold">Точка Старта</span>
+              <MissionBrand size={32} textClassName="c-display text-lg font-bold" />
             </div>
             <p className="mt-4 max-w-sm text-sm leading-relaxed" style={{ color: 'var(--c-ink-soft)' }}>
               Программа «Точка Старта» для тех, кто хочет превратить личностный рост в конкретный
