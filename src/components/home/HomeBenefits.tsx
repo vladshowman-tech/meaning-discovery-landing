@@ -126,7 +126,7 @@ const HomeBenefits = () => {
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed flex-1">{s.desc}</p>
 
                 {s.active ? (
-                  <Button onClick={() => navigate('/1')} className="mt-7 rounded-full h-12">
+                  <Button onClick={() => navigate('/tochkastarta')} className="mt-7 rounded-full h-12">
                     Перейти к ступени №1
                   </Button>
                 ) : (

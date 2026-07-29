@@ -14,7 +14,7 @@ export type Course = {
 
 export const courses: Course[] = [
   {
-    route: '/1',
+    route: '/tochkastarta',
     tag: 'Ступень №1',
     title: 'Точка Старта',
     subtitle: 'Кто я на самом деле?',
@@ -27,7 +27,7 @@ export const courses: Course[] = [
     accent: '#f5a524',
   },
   {
-    route: '/2',
+    route: '/yavigre',
     tag: 'Ступень №2',
     title: 'Я в игре',
     subtitle: 'Качество жизни и отношений',
@@ -40,7 +40,7 @@ export const courses: Course[] = [
     accent: '#c96f4a',
   },
   {
-    route: '/3',
+    route: '/moyaistoriya',
     tag: 'Ступень №3',
     title: 'Моя история',
     subtitle: 'Достижение конкретных целей',
@@ -53,7 +53,7 @@ export const courses: Course[] = [
     accent: '#4da3ff',
   },
   {
-    route: '/4',
+    route: '/denegnyiproryv',
     tag: 'Ступень №4',
     title: 'Денежный прорыв',
     subtitle: 'Выход из тупика',

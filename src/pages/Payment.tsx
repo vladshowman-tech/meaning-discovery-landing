@@ -34,12 +34,12 @@ const Payment = () => {
 
       <header className="relative container flex items-center justify-between py-6">
         <button
-          onClick={() => navigate('/1')}
+          onClick={() => navigate('/tochkastarta')}
           className="flex items-center gap-2.5"
         >
           <MissionBrand size={36} textClassName="font-display text-2xl font-semibold tracking-tight" />
         </button>
-        <Button variant="ghost" onClick={() => navigate('/1')} className="rounded-full">
+        <Button variant="ghost" onClick={() => navigate('/tochkastarta')} className="rounded-full">
           <Icon name="ArrowLeft" size={16} className="mr-2" /> На главную
         </Button>
       </header>

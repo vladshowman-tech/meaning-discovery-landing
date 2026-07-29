@@ -69,7 +69,7 @@ const HomeHero = () => {
           >
             <Button
               size="lg"
-              onClick={() => navigate('/1')}
+              onClick={() => navigate('/tochkastarta')}
               className="rounded-full text-base h-14 px-8 glow font-medium"
             >
               Перейти к ступени №1
