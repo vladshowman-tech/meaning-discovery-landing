@@ -63,7 +63,11 @@ const Cta = () => {
                   placeholder="E-mail"
                   className="h-14 rounded-full bg-card/60 border-border px-6"
                 />
-                <Button type="submit" size="lg" className="h-14 rounded-full px-8 glow font-medium w-full">
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="h-auto min-h-14 rounded-full px-8 py-3 glow font-medium w-full whitespace-normal text-center leading-snug"
+                >
                   Записаться на консультацию по целям
                 </Button>
                 {error && <p className="text-sm text-destructive">{error}</p>}
