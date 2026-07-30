@@ -442,7 +442,16 @@ const Relationships = () => {
         </div>
 
         <div
-          className="h-container mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm"
+          className="h-container mt-8 pt-6 text-xs leading-relaxed"
+          style={{ borderTop: '1px solid var(--h-border)', color: 'var(--h-ink-soft)' }}
+        >
+          <p>ИП Володин Виталий Эдуардович</p>
+          <p>ИНН 665806406810</p>
+          <p>ОГРНИП 325665800163492</p>
+        </div>
+
+        <div
+          className="h-container mt-6 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm"
           style={{ borderTop: '1px solid var(--h-border)', color: 'var(--h-ink-soft)' }}
         >
           <span>© 2026 Гармония. Все права защищены.</span>
