@@ -60,11 +60,15 @@ const Programs = () => {
               </ul>
 
               <Button
-                onClick={() =>
-                  p.slug === 'standart'
-                    ? (window.location.href = 'https://payment.alfabank.ru/sc/qqBIIRvrVfoyltPt')
-                    : navigate(`/oplata/${p.slug}`)
-                }
+                onClick={() => {
+                  if (p.slug === 'standart') {
+                    window.location.href = 'https://payment.alfabank.ru/sc/qqBIIRvrVfoyltPt';
+                  } else if (p.slug === 'lgotnyy') {
+                    window.location.href = 'https://payment.alfabank.ru/sc/wmCbmpNMFZOZRYlv';
+                  } else {
+                    navigate(`/oplata/${p.slug}`);
+                  }
+                }}
                 className={`mt-7 rounded-full h-12 ${
                   p.featured ? '' : 'bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground'
                 }`}
