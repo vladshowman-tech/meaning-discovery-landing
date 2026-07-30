@@ -57,7 +57,7 @@ const Hero = () => {
             <Button
               size="lg"
               variant="outline"
-              onClick={() => go('#path')}
+              onClick={() => go('#how')}
               className="rounded-full text-base h-14 px-8 border-border bg-transparent hover:bg-secondary"
             >
               <Icon name="Compass" size={18} className="mr-1" />
