@@ -8,6 +8,7 @@ import How from '@/components/landing/How';
 import Faq from '@/components/landing/Faq';
 import Cta from '@/components/landing/Cta';
 import Footer from '@/components/landing/Footer';
+import RegisterCta from '@/components/landing/RegisterCta';
 
 const Index = () => {
   return (
@@ -16,11 +17,15 @@ const Index = () => {
       <main>
         <Hero />
         <Path />
+        <RegisterCta />
         <Mentor />
+        <RegisterCta />
         <Programs />
         <Marquee />
         <How />
+        <RegisterCta />
         <Faq />
+        <RegisterCta />
         <Cta />
       </main>
       <Footer />
