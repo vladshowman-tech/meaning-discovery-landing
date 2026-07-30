@@ -51,7 +51,7 @@ const Hero = () => {
               onClick={() => go('#programs')}
               className="rounded-full text-base h-14 px-8 glow font-medium"
             >
-              Зарегистрироваться в программе
+              Зарегистрироваться
               <Icon name="ArrowRight" size={18} className="ml-1" />
             </Button>
             <Button

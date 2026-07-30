@@ -21,8 +21,7 @@ const Footer = () => {
             <ul className="space-y-2.5 text-sm text-muted-foreground">
               {[
                 { l: 'Путь', h: '#path' },
-                { l: 'Программы', h: '#programs' },
-                { l: 'Как проходит', h: '#how' },
+                { l: 'Что Вас ждёт', h: '#how' },
                 { l: 'Вопросы', h: '#faq' },
               ].map((i) => (
                 <li key={i.h}>
