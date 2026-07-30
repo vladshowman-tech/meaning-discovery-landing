@@ -341,6 +341,8 @@ const Breakthrough = () => {
                       window.location.href = 'https://payment.alfabank.ru/sc/qqBIIRvrVfoyltPt';
                     } else if (p.slug === 'lgotnyy') {
                       window.location.href = 'https://payment.alfabank.ru/sc/wmCbmpNMFZOZRYlv';
+                    } else if (p.slug === 'vmeste') {
+                      window.location.href = 'https://payment.alfabank.ru/sc/efFvliuLpqmftlbw';
                     } else {
                       navigate(`/oplata/${p.slug}`);
                     }
