@@ -11,8 +11,8 @@ const Footer = () => {
               <MissionBrand size={36} textClassName="font-display text-2xl font-semibold" />
             </div>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground leading-relaxed">
-              Ступень № 1. Программа для поиска смысла, самопознания и работы над собой.
-              Возвращаем ориентиры тем, кто живёт «на автопилоте». Все программа состоит из 4х ступеней.
+              Программа "Точка старта!" - это поиск смысла, самопознания и работы над собой.
+              Возвращаем ориентиры тем, кто живёт «на автопилоте».
             </p>
           </div>
 
@@ -53,7 +53,13 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-muted-foreground">
+        <div className="mt-8 pt-6 border-t border-border text-xs text-muted-foreground leading-relaxed">
+          <p>ИП Володин Виталий Эдуардович</p>
+          <p>ИНН 665806406810</p>
+          <p>ОГРНИП 325665800163492</p>
+        </div>
+
+        <div className="mt-6 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-muted-foreground">
           <span>© 2026 Точка Старта. Все права защищены.</span>
           <span>Сделано с заботой о тех, кто ищет себя</span>
         </div>
