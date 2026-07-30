@@ -13,6 +13,7 @@ import Career from "./pages/Career";
 import Breakthrough from "./pages/Breakthrough";
 import Payment from "./pages/Payment";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import DataConsentsAdmin from "./pages/DataConsentsAdmin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/denegnyiproryv" element={<Breakthrough />} />
           <Route path="/oplata/:slug" element={<Payment />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+          <Route path="/data-consents-report-x7k9m2" element={<DataConsentsAdmin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

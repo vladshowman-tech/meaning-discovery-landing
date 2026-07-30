@@ -1,0 +1,25 @@
+{
+  "tests": [
+    {
+      "name": "OPTIONS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "GET list of consents",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": {"items": []},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "POST invalid email",
+      "method": "POST",
+      "path": "/",
+      "body": {"email": "bad", "fullName": "Иван Иванов", "city": "Москва", "phone": "+79990000000"},
+      "expectedStatus": 400
+    }
+  ]
+}
