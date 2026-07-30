@@ -189,7 +189,9 @@ const ShopFaqCta = () => {
           style={{ borderColor: 'var(--s-border)' }}
         >
           <span>© 2026 Миссия. Все права защищены.</span>
-          <span>Сделано с заботой о тех, кто растёт</span>
+          <a href="/privacypolicy" className="hover:text-[var(--s-ink)] transition-colors">
+            Политика конфиденциальности
+          </a>
         </div>
       </footer>
     </>

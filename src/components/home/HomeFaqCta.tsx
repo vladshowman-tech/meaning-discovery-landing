@@ -142,7 +142,10 @@ const HomeFaqCta = () => {
                   </Button>
                   {error && <p className="text-sm text-destructive">{error}</p>}
                   <p className="text-xs text-muted-foreground mt-1">
-                    Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
+                    Нажимая кнопку, вы соглашаетесь с{' '}
+                    <a href="/privacypolicy" className="underline hover:text-foreground">
+                      политикой конфиденциальности
+                    </a>
                   </p>
                 </form>
               )}
@@ -195,7 +198,9 @@ const HomeFaqCta = () => {
 
           <div className="mt-12 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-muted-foreground">
             <span>© 2026 Миссия. Все права защищены.</span>
-            <span>Сделано с заботой о тех, кто ищет себя</span>
+            <a href="/privacypolicy" className="hover:text-foreground transition-colors">
+              Политика конфиденциальности
+            </a>
           </div>
         </div>
       </footer>

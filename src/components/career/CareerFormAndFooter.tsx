@@ -83,7 +83,10 @@ const CareerFormAndFooter = ({
                   </button>
                   {error && <p className="text-sm" style={{ color: '#ff6b6b' }}>{error}</p>}
                   <p className="text-xs mt-1" style={{ color: 'var(--c-ink-soft)' }}>
-                    Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
+                    Нажимая кнопку, вы соглашаетесь с{' '}
+                    <a href="/privacypolicy" className="underline">
+                      политикой конфиденциальности
+                    </a>
                   </p>
                 </form>
               )}
@@ -138,7 +141,9 @@ const CareerFormAndFooter = ({
           style={{ borderTop: '1px solid var(--c-border)', color: 'var(--c-ink-soft)' }}
         >
           <span>© 2026 Точка Старта. Все права защищены.</span>
-          <span>Сделано для тех, кто добивается результата</span>
+          <a href="/privacypolicy" className="hover:opacity-70 transition-opacity">
+            Политика конфиденциальности
+          </a>
         </div>
       </footer>
     </>

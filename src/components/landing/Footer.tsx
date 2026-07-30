@@ -61,7 +61,9 @@ const Footer = () => {
 
         <div className="mt-6 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-muted-foreground">
           <span>© 2026 Точка Старта. Все права защищены.</span>
-          <span>Сделано с заботой о тех, кто ищет себя</span>
+          <a href="/privacypolicy" className="hover:text-foreground transition-colors">
+            Политика конфиденциальности
+          </a>
         </div>
       </div>
     </footer>

@@ -68,7 +68,10 @@ const Cta = () => {
                 </Button>
                 {error && <p className="text-sm text-destructive">{error}</p>}
                 <p className="text-xs text-muted-foreground mt-1">
-                  Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
+                  Нажимая кнопку, вы соглашаетесь с{' '}
+                  <a href="/privacypolicy" className="underline hover:text-foreground">
+                    политикой конфиденциальности
+                  </a>
                 </p>
               </form>
             )}
