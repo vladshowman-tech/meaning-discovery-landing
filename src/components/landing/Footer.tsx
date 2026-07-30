@@ -33,6 +33,14 @@ const Footer = () => {
                   </button>
                 </li>
               ))}
+              <li>
+                <button
+                  onClick={() => document.querySelector('#programs')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="hover:text-foreground transition-colors"
+                >
+                  Начать путь
+                </button>
+              </li>
             </ul>
           </div>
 
