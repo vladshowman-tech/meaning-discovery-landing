@@ -6,7 +6,6 @@ import MissionBrand from '@/components/MissionBrand';
 const links = [
   { label: 'Путь', href: '#path' },
   { label: 'Тренер', href: '#mentor' },
-  { label: 'Программы', href: '#programs' },
   { label: 'Как проходит', href: '#how' },
   { label: 'Вопросы', href: '#faq' },
 ];
