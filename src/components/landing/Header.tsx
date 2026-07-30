@@ -66,7 +66,7 @@ const Header = () => {
 
       {open && (
         <div className="md:hidden container mt-3 animate-fade-up">
-          <div className="glass rounded-2xl p-4 flex flex-col gap-1">
+          <div className="bg-card border border-border rounded-2xl p-4 flex flex-col gap-1 shadow-xl">
             {links.map((l) => (
               <button
                 key={l.href}
