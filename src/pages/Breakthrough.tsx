@@ -336,7 +336,11 @@ const Breakthrough = () => {
                 </ul>
 
                 <button
-                  onClick={() => navigate(`/oplata/${p.slug}`)}
+                  onClick={() =>
+                    p.slug === 'standart'
+                      ? (window.location.href = 'https://payment.alfabank.ru/sc/qqBIIRvrVfoyltPt')
+                      : navigate(`/oplata/${p.slug}`)
+                  }
                   className={p.featured ? 'b-btn mt-7' : 'b-btn-outline mt-7'}
                 >
                   Записаться

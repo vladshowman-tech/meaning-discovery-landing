@@ -125,7 +125,11 @@ const CareerMentorAndPlans = ({ navigate, mentorImg, credentials, plans }: Caree
                 </ul>
 
                 <button
-                  onClick={() => navigate(`/oplata/${p.slug}`)}
+                  onClick={() =>
+                    p.slug === 'standart'
+                      ? (window.location.href = 'https://payment.alfabank.ru/sc/qqBIIRvrVfoyltPt')
+                      : navigate(`/oplata/${p.slug}`)
+                  }
                   className={p.featured ? 'c-btn mt-7' : 'c-btn-outline mt-7'}
                 >
                   Записаться
