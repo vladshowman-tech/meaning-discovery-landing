@@ -1,18 +1,16 @@
-import { NavigateFunction } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 import MissionBrand from '@/components/MissionBrand';
 
 export type NavLink = { l: string; h: string };
 
 interface CareerHeaderProps {
-  navigate: NavigateFunction;
   scrollTo: (h: string) => void;
   navLinks: NavLink[];
   menuOpen: boolean;
   setMenuOpen: (open: boolean) => void;
 }
 
-const CareerHeader = ({ navigate, scrollTo, navLinks, menuOpen, setMenuOpen }: CareerHeaderProps) => {
+const CareerHeader = ({ scrollTo, navLinks, menuOpen, setMenuOpen }: CareerHeaderProps) => {
   return (
     <>
       <nav className="c-nav">
@@ -30,9 +28,6 @@ const CareerHeader = ({ navigate, scrollTo, navLinks, menuOpen, setMenuOpen }: C
           </div>
 
           <div className="hidden md:flex items-center gap-3">
-            <button onClick={() => navigate('/')} className="c-btn-outline text-sm py-2.5 px-4">
-              <Icon name="ArrowLeft" size={14} /> На главную
-            </button>
             <button onClick={() => scrollTo('#c-form')} className="c-btn text-sm py-2.5 px-5">
               Оставить заявку
             </button>
@@ -72,9 +67,6 @@ const CareerHeader = ({ navigate, scrollTo, navLinks, menuOpen, setMenuOpen }: C
             ))}
           </div>
           <div className="mt-auto flex flex-col gap-3">
-            <button onClick={() => navigate('/')} className="c-btn-outline">
-              <Icon name="ArrowLeft" size={15} /> На главную
-            </button>
             <button onClick={() => scrollTo('#c-form')} className="c-btn">
               Оставить заявку
             </button>

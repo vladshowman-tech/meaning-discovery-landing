@@ -66,9 +66,6 @@ const Breakthrough = () => {
         <div className="flex items-center gap-2.5">
           <MissionBrand size={40} textClassName="b-display text-2xl tracking-wide" />
         </div>
-        <button onClick={() => navigate('/')} className="b-btn-outline text-sm">
-          <Icon name="ArrowLeft" size={15} /> На главную
-        </button>
       </header>
 
       <section className="relative overflow-hidden pt-6 pb-20 md:pt-10 md:pb-28">

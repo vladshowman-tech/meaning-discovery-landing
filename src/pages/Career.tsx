@@ -118,7 +118,6 @@ const Career = () => {
   return (
     <div className="career-page">
       <CareerHeader
-        navigate={navigate}
         scrollTo={scrollTo}
         navLinks={navLinks}
         menuOpen={menuOpen}
