@@ -226,13 +226,13 @@ const Breakthrough = () => {
       </section>
 
       <section id="b-mentor" className="relative py-20 md:py-28" style={{ background: 'var(--b-bg-soft)' }}>
-        <div className="b-container grid lg:grid-cols-[0.85fr_1.15fr] gap-12 items-center">
-          <div className="relative">
+        <div className="b-container grid lg:grid-cols-[0.6fr_1.4fr] gap-12 items-center">
+          <div className="relative max-w-[340px] mx-auto lg:mx-0">
             <div className="relative rounded overflow-hidden" style={{ border: '1px solid var(--b-border)' }}>
               <img
                 src={MENTOR_IMG}
                 alt="Елена Ширыкалова — тренер программы «Точка Старта»"
-                className="w-full h-[420px] object-cover"
+                className="w-full h-[560px] object-cover object-top"
               />
             </div>
           </div>

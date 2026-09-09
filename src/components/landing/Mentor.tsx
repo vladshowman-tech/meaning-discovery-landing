@@ -12,14 +12,14 @@ const Mentor = () => {
   return (
     <section id="mentor" className="relative py-24 md:py-32">
       <div className="absolute inset-x-0 -top-10 h-96 aurora opacity-30 blur-3xl pointer-events-none" />
-      <div className="container relative grid lg:grid-cols-[0.85fr_1.15fr] gap-12 items-center">
-        <div className="relative animate-fade-up">
+      <div className="container relative grid lg:grid-cols-[0.6fr_1.4fr] gap-12 items-center">
+        <div className="relative max-w-[340px] mx-auto lg:mx-0 animate-fade-up">
           <div className="absolute -inset-6 rounded-[2.5rem] bg-primary/20 blur-3xl" />
           <div className="relative rounded-[2rem] overflow-hidden border border-border glow">
             <img
               src={MENTOR_IMG}
               alt="Елена Ширыкалова — тренер программы «Точка Старта»"
-              className="w-full h-[480px] object-cover"
+              className="w-full h-[560px] object-cover object-top"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
           </div>

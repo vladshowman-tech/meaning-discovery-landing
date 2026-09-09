@@ -15,13 +15,13 @@ const CareerMentorAndPlans = ({ navigate, mentorImg, credentials, plans }: Caree
   return (
     <>
       <section id="c-program" className="relative py-20 md:py-28">
-        <div className="c-container grid lg:grid-cols-[0.85fr_1.15fr] gap-12 items-center">
-          <div className="relative">
+        <div className="c-container grid lg:grid-cols-[0.6fr_1.4fr] gap-12 items-center">
+          <div className="relative max-w-[340px] mx-auto lg:mx-0">
             <div className="relative rounded-2xl overflow-hidden" style={{ border: '1px solid var(--c-border)' }}>
               <img
                 src={mentorImg}
                 alt="Елена Ширыкалова — тренер программы"
-                className="w-full h-[420px] object-cover object-top"
+                className="w-full h-[560px] object-cover object-top"
               />
             </div>
           </div>
