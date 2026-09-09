@@ -111,9 +111,9 @@ const CareerHero = ({ scrollTo, routeDays }: CareerHeroProps) => {
             </svg>
 
             {[
-              { day: '07', label: routeDays[0].label, left: '4%', top: '82%' },
-              { day: '08', label: routeDays[1].label, left: '38%', top: '48%' },
-              { day: '09', label: routeDays[2].label, left: '76%', top: '5%' },
+              { day: '02', label: routeDays[0].label, left: '4%', top: '82%' },
+              { day: '03', label: routeDays[1].label, left: '38%', top: '48%' },
+              { day: '04', label: routeDays[2].label, left: '76%', top: '5%' },
             ].map((n, i) => (
               <div
                 key={n.day}
