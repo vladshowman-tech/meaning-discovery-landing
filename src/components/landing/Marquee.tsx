@@ -1,6 +1,6 @@
 import Icon from '@/components/ui/icon';
 
-const ITEM = 'Старт программы 7 августа 2026 года';
+const ITEM = 'Старт программы 2 октября 2026 года';
 
 const Marquee = () => {
   const items = Array.from({ length: 8 });
