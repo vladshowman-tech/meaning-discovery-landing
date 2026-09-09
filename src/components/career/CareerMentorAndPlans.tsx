@@ -56,7 +56,7 @@ const CareerMentorAndPlans = ({ navigate, mentorImg, credentials, plans }: Caree
             <div className="mt-4 flex items-center gap-3 c-card px-5 py-4 max-w-md">
               <Icon name="Clock" size={18} style={{ color: 'var(--c-cyan)' }} className="shrink-0" />
               <span className="text-sm">
-                Длительность — 3 дня: 7 августа (вечер), 8 и 9 августа (весь день) 2026 года
+                Длительность — 3 дня: 2 октября (вечер), 3 и 4 октября (весь день) 2026 года
               </span>
             </div>
           </div>
