@@ -17,7 +17,7 @@ const CareerHero = ({ scrollTo, routeDays }: CareerHeroProps) => {
         <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
           <div>
             <span className="c-tag c-fade-up">
-              <Icon name="Terminal" size={13} /> ТОЧКА_СТАРТА // 07–09.08.2026
+              <Icon name="Terminal" size={13} /> ТОЧКА_СТАРТА // 02–04.10.2026
             </span>
 
             <h1
