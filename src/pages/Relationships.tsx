@@ -464,7 +464,7 @@ const Relationships = () => {
           className="h-container mt-6 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm"
           style={{ borderTop: '1px solid var(--h-border)', color: 'var(--h-ink-soft)' }}
         >
-          <span>© 2026 Гармония. Все права защищены.</span>
+          <span>© 2026 Точка старта. Все права защищены.</span>
           <a href="/privacypolicy" className="hover:opacity-70 transition-opacity">
             Политика конфиденциальности
           </a>
