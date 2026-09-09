@@ -81,7 +81,7 @@ const Relationships = () => {
         <div className="h-container relative grid lg:grid-cols-[1.05fr_0.95fr] gap-14 items-center">
           <div>
             <span className="h-eyebrow h-fade-up">
-              <Icon name="CalendarHeart" size={15} /> 7–9 августа 2026
+              <Icon name="CalendarHeart" size={15} /> 2–4 октября 2026
             </span>
 
             <h1
@@ -239,7 +239,7 @@ const Relationships = () => {
             <div className="mt-4 flex items-center gap-3 h-card px-5 py-4 max-w-md">
               <Icon name="Clock" size={18} style={{ color: 'var(--h-accent)' }} className="shrink-0" />
               <span className="text-sm">
-                Длительность — 3 дня: 7 августа (вечер), 8 и 9 августа (весь день) 2026 года
+                Длительность — 3 дня: 2 октября (вечер), 3 и 4 октября (весь день) 2026 года
               </span>
             </div>
           </div>
