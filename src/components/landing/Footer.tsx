@@ -61,7 +61,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-8 pt-6 border-t border-border text-xs text-muted-foreground leading-relaxed">
-          <p>ИП Володин Виталий Александрович</p>
+          <p>ИП Володин Виталий Эдуардович</p>
           <p>ИНН 665806406810</p>
           <p>ОГРНИП 325665800163492</p>
         </div>
