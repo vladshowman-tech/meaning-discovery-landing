@@ -21,7 +21,7 @@ const CareerMentorAndPlans = ({ navigate, mentorImg, credentials, plans }: Caree
               <img
                 src={mentorImg}
                 alt="Елена Ширыкалова — тренер программы"
-                className="w-full h-[420px] object-cover"
+                className="w-full h-[420px] object-cover object-top"
               />
             </div>
           </div>
