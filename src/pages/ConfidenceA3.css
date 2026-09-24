@@ -1,0 +1,140 @@
+.a3-page {
+  --a3-bg: #fdf6ee;
+  --a3-bg-soft: #f7ead9;
+  --a3-card: #ffffff;
+  --a3-ink: #3d2f24;
+  --a3-ink-soft: #8c7565;
+  --a3-accent: #e0783f;
+  --a3-accent-soft: #f2a877;
+  --a3-sage: #8ba17e;
+  --a3-border: #efdfcb;
+
+  background: var(--a3-bg);
+  color: var(--a3-ink);
+  font-family: "Manrope", sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.a3-page h1,
+.a3-page h2,
+.a3-page h3,
+.a3-page .a3-display {
+  font-family: "Fraunces", serif;
+  letter-spacing: -0.01em;
+}
+
+.a3-container {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.a3-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  background: var(--a3-bg-soft);
+  color: var(--a3-accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.a3-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  background: var(--a3-accent);
+  color: #fff8f2;
+  font-weight: 700;
+  padding: 1rem 2.2rem;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+  box-shadow: 0 14px 30px -12px rgba(224, 120, 63, 0.5);
+  border: none;
+  cursor: pointer;
+}
+
+.a3-btn:hover {
+  transform: translateY(-2px);
+  background: #c9642f;
+}
+
+.a3-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--a3-ink);
+  font-weight: 600;
+  padding: 0.95rem 2rem;
+  border: 1.5px solid var(--a3-border);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.a3-btn-outline:hover {
+  border-color: var(--a3-accent);
+  color: var(--a3-accent);
+}
+
+.a3-card {
+  background: var(--a3-card);
+  border: 1px solid var(--a3-border);
+  border-radius: 1.75rem;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.a3-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 45px -20px rgba(61, 47, 36, 0.15);
+}
+
+.a3-input {
+  width: 100%;
+  border-radius: 999px;
+  border: 1.5px solid var(--a3-border);
+  background: #fff;
+  padding: 1rem 1.5rem;
+  font-size: 0.95rem;
+  color: var(--a3-ink);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.a3-input:focus {
+  border-color: var(--a3-accent);
+}
+
+.a3-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+@keyframes a3-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.a3-fade-up {
+  animation: a3-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}

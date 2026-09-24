@@ -1,0 +1,155 @@
+.a5-page {
+  --a5-bg: #0b0f16;
+  --a5-bg-soft: #111826;
+  --a5-card: #151d2c;
+  --a5-ink: #eaf0fb;
+  --a5-ink-soft: #8493ac;
+  --a5-blue: #3b82f6;
+  --a5-blue-soft: #7dabfd;
+  --a5-border: #22304a;
+
+  background: var(--a5-bg);
+  color: var(--a5-ink);
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.a5-page h1,
+.a5-page h2,
+.a5-page h3,
+.a5-page .a5-display {
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+
+.a5-container {
+  max-width: 74rem;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.a5-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: 0.25rem;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid var(--a5-blue);
+  color: var(--a5-blue-soft);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.a5-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.35rem;
+  background: var(--a5-blue);
+  color: #fff;
+  font-weight: 700;
+  padding: 1rem 2.2rem;
+  transition: all 0.25s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.a5-btn:hover {
+  background: var(--a5-blue-soft);
+  transform: translateY(-1px);
+}
+
+.a5-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.35rem;
+  background: transparent;
+  color: var(--a5-ink);
+  font-weight: 600;
+  padding: 0.95rem 2rem;
+  border: 1.5px solid var(--a5-border);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.a5-btn-outline:hover {
+  border-color: var(--a5-blue);
+  color: var(--a5-blue-soft);
+}
+
+.a5-card {
+  background: var(--a5-card);
+  border: 1px solid var(--a5-border);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.a5-card:hover {
+  border-color: var(--a5-blue);
+}
+
+.a5-input {
+  width: 100%;
+  border-radius: 0.35rem;
+  border: 1.5px solid var(--a5-border);
+  background: var(--a5-bg-soft);
+  padding: 0.95rem 1.3rem;
+  font-size: 0.95rem;
+  color: var(--a5-ink);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.a5-input:focus {
+  border-color: var(--a5-blue);
+}
+
+.a5-grid-line {
+  position: relative;
+}
+
+.a5-grid-line::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--a5-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--a5-border) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent 85%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.a5-grad-text {
+  background: linear-gradient(90deg, var(--a5-blue-soft), var(--a5-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes a5-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.a5-fade-up {
+  animation: a5-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
