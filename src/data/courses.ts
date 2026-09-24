@@ -40,7 +40,7 @@ export const courses: Course[] = [
     accent: '#c96f4a',
   },
   {
-    route: '/moyaistoriya',
+    route: '/moyaistoriya-2',
     tag: 'Ступень №3',
     title: 'Моя история',
     subtitle: 'Достижение конкретных целей',

@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import TochkaStarta from "./pages/TochkaStarta";
 import YaVigre from "./pages/YaVigre";
 import MoyaIstoriya from "./pages/MoyaIstoriya";
+import InDevelopment from "./pages/InDevelopment";
 import Index from "./pages/Index";
 import Relationships from "./pages/Relationships";
 import Career from "./pages/Career";
@@ -27,7 +28,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Shop />} />
+          <Route path="/" element={<InDevelopment />} />
           <Route path="/1" element={<Index />} />
           <Route path="/2" element={<Relationships />} />
           <Route path="/3" element={<Career />} />
@@ -35,7 +36,8 @@ const App = () => (
           <Route path="/5" element={<Home />} />
           <Route path="/tochkastarta" element={<TochkaStarta />} />
           <Route path="/yavigre" element={<YaVigre />} />
-          <Route path="/moyaistoriya" element={<MoyaIstoriya />} />
+          <Route path="/moyaistoriya" element={<Shop />} />
+          <Route path="/moyaistoriya-2" element={<MoyaIstoriya />} />
           <Route path="/denegnyiproryv" element={<Breakthrough />} />
           <Route path="/oplata/:slug" element={<Payment />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
