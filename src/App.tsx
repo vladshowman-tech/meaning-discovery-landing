@@ -10,6 +10,11 @@ import TochkaStarta from "./pages/TochkaStarta";
 import YaVigre from "./pages/YaVigre";
 import MoyaIstoriya from "./pages/MoyaIstoriya";
 import InDevelopment from "./pages/InDevelopment";
+import ConfidenceV1 from "./pages/ConfidenceV1";
+import ConfidenceV2 from "./pages/ConfidenceV2";
+import ConfidenceV3 from "./pages/ConfidenceV3";
+import ConfidenceV4 from "./pages/ConfidenceV4";
+import ConfidenceV5 from "./pages/ConfidenceV5";
 import Index from "./pages/Index";
 import Relationships from "./pages/Relationships";
 import Career from "./pages/Career";
@@ -42,6 +47,11 @@ const App = () => (
           <Route path="/oplata/:slug" element={<Payment />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
           <Route path="/data-consents-report-x7k9m2" element={<DataConsentsAdmin />} />
+          <Route path="/v1" element={<ConfidenceV1 />} />
+          <Route path="/v2" element={<ConfidenceV2 />} />
+          <Route path="/v3" element={<ConfidenceV3 />} />
+          <Route path="/v4" element={<ConfidenceV4 />} />
+          <Route path="/v5" element={<ConfidenceV5 />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

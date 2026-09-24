@@ -1,0 +1,137 @@
+.v2-page {
+  --v2-bg: #fbfaf8;
+  --v2-bg-soft: #f2f0ec;
+  --v2-card: #ffffff;
+  --v2-ink: #232220;
+  --v2-ink-soft: #8a857c;
+  --v2-accent: #9a8262;
+  --v2-accent-soft: #c7b299;
+  --v2-border: #e6e2da;
+
+  background: var(--v2-bg);
+  color: var(--v2-ink);
+  font-family: "Manrope", sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.v2-page h1,
+.v2-page h2,
+.v2-page h3,
+.v2-page .v2-display {
+  font-family: "Fraunces", serif;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+}
+
+.v2-container {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.v2-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--v2-accent);
+}
+
+.v2-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  background: var(--v2-ink);
+  color: var(--v2-bg);
+  font-weight: 600;
+  padding: 1rem 2.2rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-family: "Manrope", sans-serif;
+}
+
+.v2-btn:hover {
+  background: var(--v2-accent);
+  transform: translateY(-1px);
+}
+
+.v2-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--v2-ink);
+  font-weight: 600;
+  padding: 0.95rem 2rem;
+  border: 1px solid var(--v2-border);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.v2-btn-outline:hover {
+  border-color: var(--v2-accent);
+  color: var(--v2-accent);
+}
+
+.v2-card {
+  background: var(--v2-card);
+  border: 1px solid var(--v2-border);
+  border-radius: 0.25rem;
+  transition: all 0.4s ease;
+}
+
+.v2-card:hover {
+  border-color: var(--v2-accent-soft);
+}
+
+.v2-input {
+  width: 100%;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1.5px solid var(--v2-border);
+  background: transparent;
+  padding: 0.9rem 0.2rem;
+  font-size: 1rem;
+  color: var(--v2-ink);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.v2-input:focus {
+  border-color: var(--v2-ink);
+}
+
+.v2-input::placeholder {
+  color: #b7b1a5;
+}
+
+.v2-divider {
+  width: 3rem;
+  height: 1px;
+  background: var(--v2-accent);
+}
+
+@keyframes v2-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.v2-fade-up {
+  animation: v2-fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
