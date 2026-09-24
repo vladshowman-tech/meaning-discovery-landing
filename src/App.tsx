@@ -20,6 +20,11 @@ import ConfidenceA2 from "./pages/ConfidenceA2";
 import ConfidenceA3 from "./pages/ConfidenceA3";
 import ConfidenceA4 from "./pages/ConfidenceA4";
 import ConfidenceA5 from "./pages/ConfidenceA5";
+import ConfidenceB1 from "./pages/ConfidenceB1";
+import ConfidenceB2 from "./pages/ConfidenceB2";
+import ConfidenceB3 from "./pages/ConfidenceB3";
+import ConfidenceB4 from "./pages/ConfidenceB4";
+import ConfidenceB5 from "./pages/ConfidenceB5";
 import Index from "./pages/Index";
 import Relationships from "./pages/Relationships";
 import Career from "./pages/Career";
@@ -62,6 +67,11 @@ const App = () => (
           <Route path="/a3" element={<ConfidenceA3 />} />
           <Route path="/a4" element={<ConfidenceA4 />} />
           <Route path="/a5" element={<ConfidenceA5 />} />
+          <Route path="/b1" element={<ConfidenceB1 />} />
+          <Route path="/b2" element={<ConfidenceB2 />} />
+          <Route path="/b3" element={<ConfidenceB3 />} />
+          <Route path="/b4" element={<ConfidenceB4 />} />
+          <Route path="/b5" element={<ConfidenceB5 />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
